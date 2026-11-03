@@ -1,6 +1,6 @@
 # Define139 Training & Fitness — website
 
-Source for define139.com, moving from Webflow into GoHighLevel (Define139 sub-account `tUuiYsfY6o3C9cIKnKiN`). Same setup as accreditedinterchange.com and mylaunchpartner.ai: each GHL page holds one Custom Code element, and everything else loads from this repo through GitHub Pages. **Make changes here, not in GHL.**
+Source for define139.com, moving from Webflow into GoHighLevel (Define139 sub-account `tUuiYsfY6o3C9cIKnKiN`, Sites → Websites → **Define139**, website ID `upyVbvobrER5gNF14mna`). Same setup as accreditedinterchange.com and mylaunchpartner.ai: each GHL page holds one Custom Code element, and everything else loads from this repo through GitHub Pages. **Make changes here, not in GHL.**
 
 ## How it works
 
@@ -17,19 +17,19 @@ Each page's custom-code embed contains only:
 
 Every page that was code-only in Webflow is here. Pages that needed several Webflow embeds (Webflow caps each embed's length) are merged into one file; there is no length limit here.
 
-| Live URL | `data-page` / file | Webflow embeds merged |
-|---|---|---|
-| `/` | `home` | 1 |
-| `/womens-strength-studio` | `womens-strength-studio` | 2 |
-| `/metabolic-mapping-online-programs` | `metabolic-mapping-online-programs` | 2 |
-| `/privacy-policy` | `privacy-policy` | 1 |
-| `/terms-of-service` | `terms-of-service` | 1 |
-| `/glp-1-strength-sculpt` | `glp-1-strength-sculpt` | 4 |
-| `/glp-1-interest-confirmation` | `glp-1-interest-confirmation` | 1 |
-| `/request-more-info` | `request-more-info` | 1 |
-| `/request-info-confirmation` | `request-info-confirmation` | 1 |
-| `/free-threshold-focus-ebook-download` | `free-threshold-focus-ebook-download` | 1 |
-| `/check-your-inbox-for-your-free-threshold-focus-ebook` | `check-your-inbox-for-your-free-threshold-focus-ebook` | 1 |
+| Live URL | `data-page` / file | Webflow embeds merged | GHL page ID |
+|---|---|---|---|
+| `/` | `home` | 1 | 8ee9rCy2O9LkYumlq4ac |
+| `/womens-strength-studio` | `womens-strength-studio` | 2 | 2ifjIGXTszCfhUKDx9SV |
+| `/metabolic-mapping-online-programs` | `metabolic-mapping-online-programs` | 2 | rhdxe6EjZ69a3fapJt3Q |
+| `/privacy-policy` | `privacy-policy` | 1 | lEVmmH6HP1ms3VtgOuce |
+| `/terms-of-service` | `terms-of-service` | 1 | oZxbYLmSjsa2fbAxwXvK |
+| `/glp-1-strength-sculpt` | `glp-1-strength-sculpt` | 4 | fCMfSC27nIDAOFqdG2pD |
+| `/glp-1-interest-confirmation` | `glp-1-interest-confirmation` | 1 | XzlRtVYGvnu5iUminhCA |
+| `/request-more-info` | `request-more-info` | 1 | D97MpX9uKKKfMxdpc5op |
+| `/request-info-confirmation` | `request-info-confirmation` | 1 | o3JdMavCNa7A3vnZVAn7 |
+| `/free-threshold-focus-ebook-download` | `free-threshold-focus-ebook-download` | 1 | R6PLuv3djqu4JUp1vy3a |
+| `/check-your-inbox-for-your-free-threshold-focus-ebook` | `check-your-inbox-for-your-free-threshold-focus-ebook` | 1 | bLEURIKZGFaU4MH33FTf |
 
 Pages built with the Webflow designer (not code) are not in this repo yet.
 
@@ -39,7 +39,11 @@ Page titles and meta descriptions are set in GHL (builder → SEO & AI search op
 
 ## GHL setup (one time per page)
 
-Full-width Section, padding 0 → 1-column Row → **Custom JS/HTML** element → paste that page's snippet. Set the live URL in Websites → Pages → ⋮ → Settings → Path.
+All 11 pages are built (Nov 3, 2026). For a new page: Section → 1-column Row → **Code** element → Open Code Editor → paste the snippet **on one line** (the GHL code editor drops the code on save if it contains a line break) → Save → SEO & AI search optimization → title/description → save the page.
+
+Preview a GHL page before the domain points to it: `https://sites.leadconnectorhq.com/preview/<GHL page ID>?notrack=true`
+
+The loader also clears GHL's fixed white page-background layer (`.bgCover`) so each page's own background shows, as it did in Webflow.
 
 ## GHL snippets and SEO
 
