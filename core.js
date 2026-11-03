@@ -28,7 +28,10 @@
     var css = document.createElement('style');
     css.textContent =
       '.d139-flat{padding:0!important;margin:0!important;max-width:none!important;width:100%!important;border:0!important;background:transparent!important;box-shadow:none!important}' +
-      'body{margin:0}';
+      'body{margin:0}' +
+      // GHL paints a fixed white page-background layer (.bgCover) behind everything.
+      // Pages set their own background, the way they did in Webflow, so clear it.
+      '.bgCover{background:transparent!important;background-image:none!important}';
     document.head.appendChild(css);
     var el = mount.parentElement;
     while (el && el !== document.body && el !== document.documentElement) {
