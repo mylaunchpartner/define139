@@ -1,0 +1,279 @@
+<!--
+  Define139 — Threshold Focus guide landing page (bright version, define139.com type + gold)
+  Paste into ONE embed element (Webflow Embed or GHL Custom JS/HTML). Section: full width, 0 padding.
+  The page breaks out to 100% browser width on its own.
+  The GHL form (Threshold Focus – Guide Request) is already embedded.
+-->
+<style>
+.d139-tf{
+  --bg:#FFFFFF; --bg-2:#F4F6F7; --card:#FFFFFF; --border:#E3E7EA;
+  --gold:#E0BF44; --gold-hi:#F0D060; --gold-text:#8A6F12; --steel:#5F869C; --steel-lt:#EEF3F6;
+  --ink:#0A0A0A; --text:#3D4448; --muted:#6B7378;
+  --dark:#161616; --dark-border:#2A2A2A;
+  width:100vw; max-width:100vw; position:relative;
+  margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
+  font-family:Arial,'Helvetica Neue',Helvetica,sans-serif; color:var(--text); background:var(--bg);
+  line-height:1.65; font-size:17px; overflow-x:hidden; box-sizing:border-box;
+}
+.d139-tf *,.d139-tf *::before,.d139-tf *::after{box-sizing:border-box}
+.d139-tf h1,.d139-tf h2,.d139-tf h3{font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;font-weight:900;
+  text-transform:uppercase;letter-spacing:-0.02em;line-height:1.02;margin:0;color:var(--ink)}
+.d139-tf p{margin:0}
+.d139-tf a{color:inherit}
+.d139-tf .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.d139-tf .kicker{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-text);margin-bottom:16px}
+
+/* ---------- TOP BAR + LOGO ---------- */
+.d139-tf .topbar{background:#1F1A0C;color:var(--gold);text-align:center;font-size:13px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;padding:12px 16px}
+.d139-tf .topbar a{text-decoration:none}
+.d139-tf .logo{display:block;margin:14px auto 0;width:180px;max-width:52%;height:auto}
+
+/* ---------- HERO: copy and eBook side by side ---------- */
+.d139-tf .hero{background:radial-gradient(70% 80% at 78% 100%,rgba(224,191,68,.14),transparent 65%),var(--bg);
+  padding:20px 0 0;position:relative}
+.d139-tf .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.d139-tf .hero-copy{padding:24px 0 48px}
+.d139-tf .hero h1{font-size:clamp(38px,4.4vw,58px);margin-bottom:20px}
+.d139-tf .hero h1 .gold{color:var(--gold-text)}
+.d139-tf .dek{font-size:19px;max-width:42ch;margin-bottom:30px}
+
+.d139-tf .doorway{justify-self:center;align-self:end;position:relative;width:min(380px,100%);aspect-ratio:3/4;
+  border:3px solid var(--gold);border-bottom:0;border-radius:190px 190px 0 0;
+  background:radial-gradient(110% 75% at 50% 100%,rgba(224,191,68,.22) 0%,var(--steel-lt) 55%,#F7F9FA 100%);
+  display:flex;align-items:flex-end;justify-content:center}
+.d139-tf .book{width:62%;aspect-ratio:7/10;margin-bottom:26px;background:#fff;color:var(--ink);
+  border-radius:2px 6px 6px 2px;position:relative;z-index:1;padding:20px 16px;display:flex;flex-direction:column;
+  box-shadow:-6px 0 0 0 #E2E2E2 inset,12px 16px 30px -10px rgba(20,30,35,.35);transform:rotate(-3deg)}
+.d139-tf .book .b-arch{width:44px;height:58px;border:2.5px solid var(--gold);border-bottom:0;border-radius:22px 22px 0 0;margin-bottom:auto}
+.d139-tf .book .b-title{font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;font-size:clamp(20px,2.3vw,26px);line-height:1}
+.d139-tf .book .b-rule{height:3px;background:var(--gold);width:40%;margin-top:12px}
+.d139-tf .book .b-sub{font-size:11px;color:#555;margin-top:8px;letter-spacing:.14em;text-transform:uppercase;line-height:1.4}
+.d139-tf .sill{height:4px;background:var(--gold);position:relative;z-index:1}
+
+/* ---------- BUTTON ---------- */
+.d139-tf .btn{display:inline-block;background:var(--gold);color:var(--ink);font-weight:700;font-size:14px;
+  letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:18px 34px;border-radius:2px;transition:background .15s}
+.d139-tf .btn:hover{background:var(--gold-hi)}
+.d139-tf a:focus-visible{outline:2px solid var(--steel);outline-offset:3px}
+
+/* ---------- FORM SECTION ---------- */
+.d139-tf .get{background:var(--bg-2);padding:80px 0;border-bottom:1px solid var(--border)}
+.d139-tf .get-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.d139-tf .get h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:14px}
+.d139-tf .get-copy p{max-width:40ch}
+.d139-tf .get-list{list-style:none;margin:22px 0 0;padding:0}
+.d139-tf .get-list li{position:relative;padding-left:28px;margin:10px 0}
+.d139-tf .get-list li::before{content:"";position:absolute;left:0;top:.45em;width:12px;height:12px;border:2px solid var(--gold);border-bottom:0;border-radius:6px 6px 0 0}
+.d139-tf .form-card{background:#FFFFFF;border:1px solid var(--border);border-top:3px solid var(--gold);
+  border-radius:2px;padding:28px 26px 20px;box-shadow:0 30px 50px -30px rgba(20,30,35,.25)}
+.d139-tf .form-card h3{font-size:22px;color:var(--ink);margin-bottom:6px}
+.d139-tf .form-card .sub{color:var(--muted);font-size:15px;margin-bottom:16px}
+.d139-tf .form-slot{min-height:460px}
+.d139-tf .form-slot iframe{width:100%!important;min-height:460px;border:0;display:block}
+.d139-tf .fine{font-size:12px;color:var(--muted);margin-top:12px;letter-spacing:.02em}
+.d139-tf .fine a{color:var(--text)}
+
+/* ---------- SECTIONS ---------- */
+.d139-tf section.band{padding:88px 0;background:var(--bg)}
+.d139-tf .band.alt{background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.d139-tf .lead-in{max-width:660px;margin-bottom:44px}
+.d139-tf .lead-in h2{font-size:clamp(32px,4vw,48px);margin-bottom:14px}
+
+.d139-tf .contents{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:56px;counter-reset:pg}
+.d139-tf .contents li{counter-increment:pg;display:grid;grid-template-columns:48px 1fr;gap:12px;
+  padding:18px 0;border-top:1px solid var(--border)}
+.d139-tf .contents li::before{content:counter(pg,decimal-leading-zero);font-weight:900;color:var(--gold-text);font-size:20px;line-height:1.35;letter-spacing:-.02em}
+.d139-tf .contents strong{display:block;color:var(--ink);font-weight:700}
+.d139-tf .contents span{color:var(--muted);font-size:15px}
+
+.d139-tf .meanings{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.d139-tf .meaning{background:var(--card);border:1px solid var(--border);border-radius:2px;padding:30px 26px}
+.d139-tf .meaning svg{width:44px;height:56px;display:block;margin-bottom:22px}
+.d139-tf .meaning h3{font-size:21px;margin-bottom:10px;line-height:1.1}
+.d139-tf .meaning p{font-size:16px}
+
+.d139-tf .note{max-width:740px;margin:0 auto}
+.d139-tf .note blockquote{margin:0;font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;
+  font-size:clamp(26px,3.4vw,40px);line-height:1.08;color:var(--ink);border-left:4px solid var(--gold);padding-left:24px}
+.d139-tf .note p{margin-top:26px}
+.d139-tf .note .sig{margin-top:22px;color:var(--gold-text);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:14px}
+.d139-tf .note .sig span{display:block;color:var(--muted);font-weight:400;letter-spacing:.04em;text-transform:none;font-size:14px;margin-top:4px}
+
+.d139-tf .closer{background:#FBF5DD;text-align:center;padding:80px 0;border-top:1px solid #F0E3B0}
+.d139-tf .closer h2{font-size:clamp(30px,4vw,48px);margin-bottom:14px}
+.d139-tf .closer p{max-width:52ch;margin:0 auto 30px}
+
+.d139-tf footer{background:#0A0A0A;color:#888;font-size:13px;letter-spacing:.06em;padding:30px 0;text-align:center;line-height:2}
+.d139-tf footer strong{color:var(--gold)}
+.d139-tf footer a{color:#888;text-decoration:none;margin:0 10px}
+.d139-tf footer a:hover{color:#fff}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:900px){
+  .d139-tf .hero-grid{grid-template-columns:1fr;gap:28px;padding-top:12px}
+  .d139-tf .hero-copy{text-align:center;padding:8px 0 0}
+  .d139-tf .dek{margin-left:auto;margin-right:auto}
+  .d139-tf .doorway{width:min(240px,64%)}
+  .d139-tf .get{padding:64px 0}
+  .d139-tf .get-grid{grid-template-columns:1fr;gap:32px}
+  .d139-tf .contents{grid-template-columns:1fr}
+  .d139-tf .meanings{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .d139-tf{font-size:16px}
+  .d139-tf .topbar{font-size:11px;letter-spacing:.1em}
+  .d139-tf .form-card{padding:22px 18px 16px}
+  .d139-tf section.band,.d139-tf .closer{padding:64px 0}
+  .d139-tf .btn{display:block;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){.d139-tf *{transition:none!important}}
+</style>
+<div class="d139-tf">
+<div class="topbar">
+<a href="mailto:define139@gmail.com">define139@gmail.com</a>
+<span aria-hidden="true">  /  </span>
+<a href="tel:+13043207869">(304) 320 – 7869</a>
+</div>
+<header class="hero">
+<img alt="Define139 Training &amp; Fitness" class="logo" src="https://cdn.prod.website-files.com/68f6a737852999ffa54cea22/6a0d226a5f5912db92fddc88_Final%20Logo.png"/>
+<div class="wrap hero-grid">
+<div class="hero-copy">
+<p class="kicker">Free holiday eBook</p>
+<h1>Enjoy the holidays <span class="gold">without waiting for January.</span></h1>
+<p class="dek">Savor the foods that matter, set simple boundaries, and pick your habits right back up when the celebration ends.</p>
+<a class="btn" href="#get-guide">Get the free guide</a>
+</div>
+<div aria-hidden="true" class="doorway">
+<div class="book">
+<div class="b-arch"></div>
+<div class="b-title">Threshold Focus</div>
+<div class="b-rule"></div>
+<div class="b-sub">A practical holiday guide</div>
+</div>
+</div>
+</div>
+<div class="sill"></div>
+</header>
+<section class="get" id="get-guide">
+<div class="wrap get-grid">
+<div class="get-copy">
+<p class="kicker">Instant download</p>
+<h2>Where should we send it?</h2>
+<p>Enter your name, email, and phone and the Threshold Focus eBook lands in your inbox in a minute or two.</p>
+<ul class="get-list">
+<li>A 10-page guide you can use before, during, and after a gathering</li>
+<li>The two-plate strategy for enjoying food without grazing</li>
+<li>A fill-in holiday plan for your next event</li>
+</ul>
+</div>
+<div class="form-card">
+<h3>Get the free guide</h3>
+<p class="sub">The PDF goes straight to your inbox.</p>
+<div class="form-slot">
+<!-- GHL form: Threshold Focus &ndash; Guide Request (kXVzNxVwolAbBQKegVYc) -->
+<iframe data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-id="kXVzNxVwolAbBQKegVYc" data-form-name="Threshold Focus – Guide Request" data-height="460" data-layout="{'id':'INLINE'}" data-layout-iframe-id="inline-kXVzNxVwolAbBQKegVYc" data-trigger-type="alwaysShow" data-trigger-value="" id="inline-kXVzNxVwolAbBQKegVYc" src="https://api.leadconnectorhq.com/widget/form/kXVzNxVwolAbBQKegVYc" style="width:100%;height:100%;border:none;border-radius:3px" title="Threshold Focus – Guide Request">
+</iframe>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+</div>
+<p class="fine">We'll email you the guide plus occasional encouragement from Greta. Unsubscribe anytime. <a href="https://www.define139.com/privacy-policy">Privacy Policy</a></p>
+</div>
+</div>
+</section>
+<section class="band">
+<div class="wrap">
+<div class="lead-in">
+<p class="kicker">Inside the guide</p>
+<h2>Ten pages. One plan you'll actually use.</h2>
+<p>Use it before, during, and after a gathering, with space to write your own plan.</p>
+</div>
+<ol class="contents">
+<li><div><strong>Why the holiday pattern repeats</strong><span>How one choice turns into a whole season</span></div></li>
+<li><div><strong>The three meanings of threshold</strong><span>A beginning, a boundary, and a doorway</span></div></li>
+<li><div><strong>Prepare before the gathering</strong><span>Your calendar, your earlier meals, your kitchen</span></div></li>
+<li><div><strong>Use the two-plate strategy</strong><span>Enjoy what you choose instead of grazing</span></div></li>
+<li><div><strong>Enjoy the gathering with intention</strong><span>Drinks, conversation, and food pressure</span></div></li>
+<li><div><strong>Continue after the celebration</strong><span>Let the event end and keep going</span></div></li>
+<li><div><strong>Handle common holiday situations</strong><span>Hosting, tasting while cooking, multiple stops</span></div></li>
+<li><div><strong>Build your personal holiday plan</strong><span>A fill-in page for your next event</span></div></li>
+<li><div><strong>Quick reference</strong><span>Before you go, while you're there, after</span></div></li>
+<li><div><strong>Reflect on what you learned</strong><span>One win, one hard moment, one adjustment</span></div></li>
+</ol>
+</div>
+</section>
+<section class="band alt">
+<div class="wrap">
+<div class="lead-in">
+<p class="kicker">The method</p>
+<h2>One word. Three ways to use it.</h2>
+<p>Threshold Focus gives you a clear place to interrupt the "I already blew it" cycle.</p>
+</div>
+<div class="meanings">
+<div class="meaning">
+<svg aria-hidden="true" fill="none" viewbox="0 0 44 56"><path d="M3 55V22a19 19 0 0 1 38 0v33" stroke="#E0BF44" stroke-width="3"></path><path d="M22 34v12M16 40l6 6 6-6" stroke="#5F869C" stroke-width="3"></path></svg>
+<h3>A place where change begins</h3>
+<p>You don't need a new year to start. The next small choice is enough.</p>
+</div>
+<div class="meaning">
+<svg aria-hidden="true" fill="none" viewbox="0 0 44 56"><path d="M3 55V22a19 19 0 0 1 38 0v33" stroke="#E0BF44" stroke-width="3"></path><path d="M11 40h22" stroke="#5F869C" stroke-width="3"></path></svg>
+<h3>A boundary you choose</h3>
+<p>A simple plan, decided ahead of time, so you can be present at the table.</p>
+</div>
+<div class="meaning">
+<svg aria-hidden="true" fill="none" viewbox="0 0 44 56"><path d="M3 55V22a19 19 0 0 1 38 0v33" stroke="#E0BF44" stroke-width="3"></path><path d="M1 54h42" stroke="#5F869C" stroke-width="4"></path></svg>
+<h3>A doorway you walk out of</h3>
+<p>When the celebration ends, so does the meal. Your ordinary habits are waiting.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="band">
+<div class="wrap">
+<div class="note">
+<blockquote>"I've already blown it. I'll worry about this in January."</blockquote>
+<p>That thought used to cost me every fall. A few pieces of Halloween candy became a reason to stop paying attention until New Year's. This guide is what I learned about keeping my grandmother's butterscotch haystacks on the table and still keeping my habits, with grace and consistency, not perfection.</p>
+<p class="sig">Greta Quesenberry<span>Founder and head coach, Define139 Training and Fitness</span></p>
+</div>
+</div>
+</section>
+<section class="closer">
+<div class="wrap">
+<h2>Your next choice is a place to continue.</h2>
+<p>Get the Threshold Focus guide free and have your plan ready before the first gathering of the season.</p>
+<a class="btn" href="#get-guide">Get the free guide</a>
+</div>
+</section>
+<footer>
+<div class="wrap">
+      © 2026 <strong>Define139 Training &amp; Fitness</strong>  |  All Rights Reserved<br/>
+      495 Blue Prince Road, Suite 13  |  Bluefield, WV 24701<br/>
+<a href="https://www.define139.com/privacy-policy">Privacy Policy</a><a href="https://www.define139.com/terms-of-service">Terms of Service</a>
+</div>
+</footer>
+</div>
+<script>
+/* Full-width breakout that excludes the scrollbar (100vw alone overshoots by the
+   scrollbar width and causes a sideways scrollbar on desktop). */
+(function(){
+  function fit(){
+    var el=document.querySelector('.d139-tf'); if(!el||!el.parentElement)return;
+    var vw=document.documentElement.clientWidth;
+    var left=el.parentElement.getBoundingClientRect().left+window.scrollX;
+    el.style.width=vw+'px'; el.style.maxWidth=vw+'px';
+    el.style.marginLeft=(-left)+'px'; el.style.marginRight='0';
+  }
+  fit();
+  window.addEventListener('load',fit);
+  window.addEventListener('resize',fit);
+})();
+/* Smooth-scroll the "Get the free guide" buttons to the form (respects reduced motion) */
+(function(){
+  document.querySelectorAll('.d139-tf a[href="#get-guide"]').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      var t=document.getElementById('get-guide'); if(!t)return; e.preventDefault();
+      var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+    });
+  });
+})();
+</script>

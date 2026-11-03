@@ -1,0 +1,82 @@
+<!-- Live URL: /glp-1-interest-confirmation -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<style>
+  /* GLP-1 Strength & Sculpt â€” confirmation page. One Custom JS/HTML element.
+     Styles scoped to .d139-thanks; breaks out of GHL containers to full browser width. */
+  html, body { overflow-x: hidden; }
+
+  .d139-thanks {
+    --gold: #e0bf44;
+    --blue: #5f869c;
+    --black: #0a0a0a;
+    --line: #2a2a2a;
+    --white: #ffffff;
+    --muted: #a8a8a8;
+
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    margin-left: -50vw;
+    max-width: none;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .d139-thanks *, .d139-thanks *::before, .d139-thanks *::after { box-sizing: border-box; }
+  .d139-thanks h1, .d139-thanks p { margin: 0; }
+
+  .d139-thanks .wrap { width: 100%; max-width: 1160px; margin: 0 auto; padding-inline: clamp(16px, 5vw, 60px); }
+
+  .d139-thanks .top { display: flex; align-items: center; padding-block: 18px; }
+  .d139-thanks .top a { display: inline-block; }
+  .d139-thanks .top img { height: 64px; width: auto; display: block; }
+
+  .d139-thanks .msg { flex: 1; display: grid; place-items: center; padding-block: clamp(40px, 8vw, 96px); }
+  .d139-thanks .card { max-width: 640px; text-align: center; display: grid; justify-items: center; gap: 20px; }
+
+  .d139-thanks .check { width: 72px; height: 72px; }
+  .d139-thanks .eyebrow { font-size: .78rem; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; color: var(--gold); }
+  .d139-thanks h1 { font-size: clamp(2.6rem, 8vw, 4.8rem); font-weight: 900; line-height: .95; letter-spacing: -.03em; text-transform: uppercase; }
+  .d139-thanks h1 .gold { color: var(--gold); }
+  .d139-thanks .lede { color: var(--muted); font-size: 1.1rem; max-width: 46ch; }
+  .d139-thanks .lede strong { color: var(--white); }
+
+  .d139-thanks .btn { margin-top: 8px; display: inline-flex; align-items: center; padding: 16px 30px; border-radius: 50px; border: 1px solid rgba(255,255,255,.4); color: var(--white); font-weight: 700; font-size: .92rem; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: background-color .2s, border-color .2s; }
+  .d139-thanks .btn:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+  .d139-thanks .btn:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+  .d139-thanks .foot { padding-block: 32px 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; display: grid; gap: 8px; }
+  .d139-thanks .foot a { color: inherit; }
+
+  @media (max-width: 560px) {
+    .d139-thanks .top img { height: 52px; }
+    .d139-thanks .btn { width: 100%; justify-content: center; }
+  }
+  @media (prefers-reduced-motion: reduce) { .d139-thanks .btn { transition: none; } }
+</style>
+<div class="d139-thanks">
+<header class="wrap top">
+<a href="https://www.define139.com"><img alt="Define139 Training &amp; Fitness home" src="{{ASSETS}}logo.png"/></a>
+</header>
+<main class="wrap msg">
+<div class="card">
+<svg aria-hidden="true" class="check" fill="none" viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#e0bf44" r="11"></circle><path d="M7 12.5l3.2 3.2L17 9" stroke="#0a0a0a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path></svg>
+<p class="eyebrow">GLP-1 Strength &amp; Sculpt</p>
+<h1>Thank <span class="gold">you!</span></h1>
+<p class="lede">Your interest in the <strong>GLP-1 Strength &amp; Sculpt</strong> program was received. Greta will reach out to you soon.</p>
+<a class="btn" href="https://www.define139.com">Back to define139.com</a>
+</div>
+</main>
+<footer class="wrap foot">
+<p>Talk with your prescribing provider before starting a new exercise program.</p>
+<p>© 2026 Define139 Training &amp; Fitness · <a href="https://www.define139.com">define139.com</a></p>
+</footer>
+</div>
