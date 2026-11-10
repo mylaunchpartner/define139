@@ -8,6 +8,7 @@
 
    In page files:
      {{ASSETS}}            → this repo's assets/ folder (images, logo)
+     {{BASE}}              → this repo's root (e.g. {{BASE}}webflow/site.css)
      <!--d139:header-->    → partials/header.html  (only fetched if used)
      <!--d139:footer-->    → partials/footer.html  (only fetched if used) */
 (function () {
@@ -85,7 +86,7 @@
       return Promise.all(parts).then(function () { return html; });
     })
     .then(function (html) {
-      mount.innerHTML = html.split('{{ASSETS}}').join(BASE + 'assets/');
+      mount.innerHTML = html.split('{{ASSETS}}').join(BASE + 'assets/').split('{{BASE}}').join(BASE);
       mount.style.minHeight = '';
       return runScripts(mount);
     })

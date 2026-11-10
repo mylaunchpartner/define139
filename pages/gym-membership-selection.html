@@ -1,0 +1,462 @@
+<!-- Live URL: /gym-membership-selection -->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Define139 — Gym Memberships</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #e0bf44;
+    --black: #0a0a0a;
+    --dark: #0d0d0d;
+    --card-bg: #141414;
+    --card-border: #222;
+    --white: #ffffff;
+    --muted: rgba(255,255,255,0.58);
+    --green: #4caf73;
+  }
+
+  body {
+    background: var(--dark);
+    color: var(--white);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── TOP BANNER ── */
+  .top-banner {
+    background: var(--gold);
+    color: var(--black);
+    text-align: center;
+    padding: 11px 20px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: rgba(10,10,10,0.97);
+    border-bottom: 1px solid #1a1a1a;
+    padding: 22px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .site-header a { display: block; line-height: 0; }
+  .site-header img { height: 74px; width: auto; }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--black);
+    text-align: center;
+    padding: 84px 40px 64px;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  .eyebrow {
+    font-size: 0.84rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    margin-bottom: 22px;
+  }
+  .hero h1 .gold { color: var(--gold); }
+  .hero-sub {
+    font-size: 1.18rem;
+    color: var(--muted);
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ── PAGE CONTENT ── */
+  .page-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 84px 40px;
+  }
+
+  /* ── CATEGORY SECTIONS ── */
+  .cat-section { margin-bottom: 84px; }
+
+  .cat-header {
+    margin-bottom: 44px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #222;
+  }
+  .cat-eyebrow {
+    font-size: 0.82rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .cat-title {
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .cat-desc {
+    font-size: 1rem;
+    color: var(--muted);
+    margin-top: 10px;
+    line-height: 1.7;
+  }
+
+  /* ── CARD GRIDS ── */
+  .grid { display: grid; gap: 24px; }
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-row-gap { margin-bottom: 24px; }
+
+  /* ── MEMBERSHIP CARD ── */
+  .mem-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .mem-card:hover {
+    border-color: rgba(224,191,68,0.6);
+    transform: translateY(-3px);
+  }
+  .mem-card.featured { border-color: var(--gold); }
+
+  .card-badge {
+    background: var(--gold);
+    color: var(--black);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 16px;
+  }
+
+  .card-body {
+    padding: 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-term {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .card-name {
+    font-size: 1.28rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+
+  .card-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.72;
+    flex: 1;
+    margin-bottom: 26px;
+  }
+
+  .card-price { margin-bottom: 22px; }
+  .card-price .amount {
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .card-price .per {
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-weight: 500;
+    margin-left: 3px;
+  }
+  .card-price .term-note {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 7px;
+    letter-spacing: 0.02em;
+  }
+
+  .card-divider { height: 1px; background: #222; margin-bottom: 20px; }
+
+  .contract-note {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.38);
+    margin-bottom: 20px;
+  }
+  .contract-note .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    flex-shrink: 0;
+  }
+
+  .btn-select {
+    display: block;
+    width: 100%;
+    background: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 17px 20px;
+    border-radius: 100px;
+    transition: opacity 0.2s;
+    margin-top: auto;
+  }
+  .btn-select:hover { opacity: 0.85; }
+
+  /* Staff-only add-on cards */
+  .mem-card.staff-only { border-color: #282828; }
+  .staff-only .card-term { color: rgba(255,255,255,0.4); }
+  .staff-request-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #1a1a1a;
+    border: 1px solid #282828;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-top: auto;
+  }
+  .staff-request-note .icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .staff-request-note p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.55;
+  }
+  .staff-request-note p strong {
+    color: rgba(255,255,255,0.75);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--black);
+    border-top: 1px solid #1a1a1a;
+    text-align: center;
+    padding: 48px 20px;
+  }
+  .site-footer .back-link {
+    display: inline-block;
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1.5px solid var(--gold);
+    padding: 15px 34px;
+    border-radius: 100px;
+    transition: background 0.2s, color 0.2s;
+    margin-bottom: 26px;
+  }
+  .site-footer .back-link:hover { background: var(--gold); color: var(--black); }
+  .site-footer .contact {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.06em;
+  }
+  .site-footer .contact a { color: rgba(255,255,255,0.45); text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .grid-2 { grid-template-columns: 1fr; }
+    .page-content { padding: 60px 20px; }
+    .hero { padding: 60px 24px 44px; }
+    .site-header { padding: 18px 24px; }
+    .site-header img { height: 60px; }
+    .card-price .amount { font-size: 2.2rem; }
+    .cat-title { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<!-- Top Banner -->
+<div class="top-banner">DEFINE139@GMAIL.COM   /   (304) 320 – 7869</div>
+<!-- Header -->
+<header class="site-header">
+<a href="https://www.define139.com">
+<img alt="Define139 Women's Strength Studio" src="{{ASSETS}}logo.png"/>
+</a>
+</header>
+<!-- Hero -->
+<div class="hero">
+<p class="eyebrow">Define139 Women’s Strength Studio — Bluefield, WV</p>
+<h1>Choose Your <span class="gold">Membership</span></h1>
+<p class="hero-sub">Train in-person at Define139 Women’s Strength Studio. 24/7 access, expert coaching, and a welcoming women-only environment built for real results.</p>
+</div>
+<!-- Page Content -->
+<div class="page-content">
+<!-- ════════════════════════════════════
+         SECTION 1 — GYM MEMBERSHIPS
+         ════════════════════════════════════ -->
+<div class="cat-section">
+<div class="cat-header">
+<p class="cat-eyebrow">24/7 Studio Access</p>
+<h2 class="cat-title">Gym Memberships</h2>
+<p class="cat-desc">24/7 keycard access to Define139 Women’s Strength Studio with guided workouts through the Define139 app.</p>
+</div>
+<div class="grid" style="grid-template-columns: 1fr; max-width: 580px;">
+<div class="mem-card">
+<div class="card-body">
+<p class="card-term">6-Month Commitment</p>
+<h3 class="card-name">Gym Membership + Virtual Gym Coach (VCG)</h3>
+<p class="card-desc">24/7 gym access plus a virtual coach delivering personalized workout programming through the Define139 app. Guided training at an unbeatable price.</p>
+<div class="card-price">
+<span class="amount">$22</span><span class="per">/week</span>
+<div class="term-note">Billed weekly · 6-month term</div>
+</div>
+<div class="card-divider"></div>
+<p class="contract-note"><span class="dot"></span>Contract required</p>
+<a class="btn-select" href="https://join.define139.com/gym-access-virtual-gym-coach-6-months">Select This Membership ↗</a>
+</div>
+</div>
+</div>
+</div><!-- /Gym Memberships -->
+<!-- ════════════════════════════════════
+         SECTION 2 — ADD-ONS & GROUP TRAINING
+         ════════════════════════════════════ -->
+<div class="cat-section">
+<div class="cat-header">
+<p class="cat-eyebrow">8-Week Programs</p>
+<h2 class="cat-title">Add-Ons &amp; Group Training</h2>
+<p class="cat-desc">Focused 8-week programs at the Define139 studio. These options are added to your membership by our staff — speak with a team member or contact us to get started.</p>
+</div>
+<div class="grid grid-2">
+<div class="mem-card staff-only">
+<div class="card-body">
+<p class="card-term">8-Week Program</p>
+<h3 class="card-name">Private Training Add-On</h3>
+<p class="card-desc">Personalized one-on-one private training sessions at the Define139 studio. Add hands-on expert coaching to your existing program for accelerated results.</p>
+<div class="card-price">
+<span class="amount">$95</span><span class="per">/week</span>
+<div class="term-note">Billed weekly · 8-week term</div>
+</div>
+<div class="card-divider"></div>
+<div class="staff-request-note">
+<span class="icon">👥</span>
+<p><strong>Added by Staff</strong>Interested? Contact us at <a href="mailto:define139@gmail.com" style="color:rgba(255,255,255,0.55);">define139@gmail.com</a> or ask a team member to add this to your membership.</p>
+</div>
+</div>
+</div>
+<div class="mem-card staff-only">
+<div class="card-body">
+<p class="card-term">8-Week Program</p>
+<h3 class="card-name">Strength &amp; Sculpt Group Sessions</h3>
+<p class="card-desc">High-energy small group training sessions at the Define139 studio. Train alongside motivated women in a structured, coach-led environment.</p>
+<div class="card-price">
+<span class="amount">$45</span><span class="per">/week</span>
+<div class="term-note">Billed weekly · 8-week term</div>
+</div>
+<div class="card-divider"></div>
+<div class="staff-request-note">
+<span class="icon">👥</span>
+<p><strong>Added by Staff</strong>Interested? Contact us at <a href="mailto:define139@gmail.com" style="color:rgba(255,255,255,0.55);">define139@gmail.com</a> or ask a team member to add this to your membership.</p>
+</div>
+</div>
+</div>
+</div>
+</div><!-- /Add-Ons -->
+<!-- ════════════════════════════════════════════
+         SECTION 3 — METABOLIC MAPPING + GYM (COMBO)
+         ════════════════════════════════════════════ -->
+<div class="cat-section">
+<div class="cat-header">
+<p class="cat-eyebrow">Best of Both Worlds</p>
+<h2 class="cat-title">Metabolic Mapping + Gym Access</h2>
+<p class="cat-desc">Combine personalized online Metabolic Mapping coaching with unlimited access to the Define139 Women’s Strength Studio. Our most complete program.</p>
+</div>
+<div class="grid grid-2">
+<div class="mem-card">
+<div class="card-body">
+<p class="card-term">6-Month Commitment</p>
+<h3 class="card-name">Metabolic Mapping + Gym</h3>
+<p class="card-desc">Personalized online Metabolic Mapping coaching plus unlimited access to the Define139 Women’s Strength Studio. Online accountability meets in-person training.</p>
+<div class="card-price">
+<span class="amount">$95</span><span class="per">/week</span>
+<div class="term-note">Billed weekly · 6-month term</div>
+</div>
+<div class="card-divider"></div>
+<p class="contract-note"><span class="dot"></span>Contract required</p>
+<a class="btn-select" href="https://join.define139.com/contract-mm-gym-6-months">Select This Membership ↗</a>
+</div>
+</div>
+<div class="mem-card featured">
+<div class="card-badge">✓ Best Value — Save with 12 Months</div>
+<div class="card-body">
+<p class="card-term">12-Month Commitment</p>
+<h3 class="card-name">Metabolic Mapping + Gym</h3>
+<p class="card-desc">Our most complete package at our best annual rate. Personalized online Metabolic Mapping coaching plus unlimited access to the Define139 Women’s Strength Studio.</p>
+<div class="card-price">
+<span class="amount">$82</span><span class="per">/week</span>
+<div class="term-note">Billed weekly · 12-month term</div>
+</div>
+<div class="card-divider"></div>
+<p class="contract-note"><span class="dot"></span>Contract required</p>
+<a class="btn-select" href="https://join.define139.com/contract-mm-gym-12-months">Select This Membership ↗</a>
+</div>
+</div>
+</div>
+</div><!-- /Metabolic Mapping + Gym -->
+</div><!-- /page-content -->
+<!-- Footer -->
+<footer class="site-footer">
+<a class="back-link" href="https://www.define139.com">← Return to Define139.com</a>
+<p class="contact">
+      Questions?  
+      <a href="mailto:define139@gmail.com">define139@gmail.com</a>
+        |  
+      <a href="tel:3043207869">(304) 320 – 7869</a>
+</p>
+</footer>
+</body>
+</html>

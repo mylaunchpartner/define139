@@ -1,0 +1,1266 @@
+<!-- Live URL: /great-eight-scholarship -->
+<title>The Great Eight Giveaway | Define139 Training &amp; Fitness</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #e0bf44;
+    --gold-deep: #c9ab30;
+    --gold-dim: rgba(224,191,68,0.12);
+    --gold-border: rgba(224,191,68,0.3);
+    --teal: #5F869C;
+    --teal-dim: rgba(95,134,156,0.10);
+    --teal-border: rgba(95,134,156,0.28);
+    --black: #0a0a0a;
+    --dark: #0d0d0d;
+    --white: #ffffff;
+    --off-white: #f8f8f8;
+    --light-gray: #f2f2f2;
+    --text: #111111;
+    --body: #1a1a1a;
+    --muted: rgba(0,0,0,0.55);
+    --dim: rgba(0,0,0,0.35);
+    --border: #e3e3e3;
+    --border-dark: #cccccc;
+    --hero-muted: rgba(255,255,255,0.62);
+    --hero-dim: rgba(255,255,255,0.32);
+    --hero-border: #1e1e1e;
+  }
+
+  body {
+    background: var(--white);
+    color: var(--text);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── Layout ── */
+  .wrap    { max-width: 700px; margin: 0 auto; padding: 0 24px; }
+  .wrap-md { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+  .wrap-lg { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── Type utilities ── */
+  .eyebrow {
+    font-size: 0.73rem;
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 14px;
+    display: block;
+  }
+  .eyebrow.teal { color: var(--teal); }
+  .eyebrow.light { color: var(--gold); }
+  .gold { color: var(--gold-deep); }
+  .teal-text { color: var(--teal); }
+
+  /* Body text standard — bold, dark, readable */
+  .body-text {
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: var(--body);
+    line-height: 1.82;
+  }
+
+  /* ── Banner ── */
+  .d139-banner {
+    background: var(--gold);
+    color: var(--black);
+    text-align: center;
+    padding: 11px 20px;
+    font-size: 0.84rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* ── Header (dark) ── */
+  .d139-header {
+    background: var(--black);
+    border-bottom: 1px solid var(--hero-border);
+    padding: 22px 40px;
+    text-align: center;
+  }
+  .d139-header img { height: 68px; width: auto; }
+
+  /* ── Hero (dark) ── */
+  .hero {
+    background: var(--dark);
+    padding: 80px 0 76px;
+    text-align: center;
+  }
+  .badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 44px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: #111;
+    border: 1px solid #282828;
+    border-radius: 100px;
+    padding: 9px 22px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.62);
+  }
+  .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+  .hero-hl {
+    font-size: clamp(2.7rem, 6vw, 5.2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+    line-height: 1.0;
+    margin-bottom: 30px;
+    text-wrap: balance;
+    color: #ffffff;
+  }
+  .hero-hl .ink {
+    background: var(--gold);
+    color: var(--black);
+    padding: 0 7px 3px;
+    display: inline;
+  }
+  @keyframes gold-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(224,191,68,0); }
+    50%       { box-shadow: 0 0 28px 6px rgba(224,191,68,0.18); }
+  }
+  .hero-hl .ink { animation: gold-pulse 4s ease-in-out infinite; }
+
+  .hero-sub {
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: var(--hero-muted);
+    max-width: 520px;
+    margin: 0 auto 40px;
+    line-height: 1.78;
+  }
+
+  .btn-gold {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 19px 52px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .btn-gold:hover { opacity: 0.86; }
+
+  .btn-note {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--hero-dim);
+    margin-top: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .btn-note.dark { color: var(--dim); }
+
+  .value-line {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-top: 28px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── Gold divider ── */
+  .hero-divider { height: 5px; background: var(--gold); }
+
+  /* ── Image placeholder utility ── */
+  .img-ph {
+    background: var(--light-gray);
+    border: 2px dashed var(--border-dark);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--dim);
+    position: relative;
+    overflow: hidden;
+  }
+  .img-ph::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 18px,
+      rgba(0,0,0,0.03) 18px,
+      rgba(0,0,0,0.03) 19px
+    );
+  }
+  .img-ph-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+  }
+  .img-ph-icon { font-size: 2rem; opacity: 0.35; }
+  .img-ph-label {
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+  .img-ph-tag {
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: rgba(0,0,0,0.25);
+  }
+
+  /* Teal-bordered placeholder variant */
+  .img-ph.teal-ph {
+    border-color: var(--teal-border);
+    background: var(--teal-dim);
+  }
+  .img-ph.teal-ph::before {
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 18px,
+      rgba(95,134,156,0.05) 18px,
+      rgba(95,134,156,0.05) 19px
+    );
+  }
+  .img-ph.teal-ph .img-ph-label { color: var(--teal); }
+
+  /* ── Story (white) ── */
+  .story { padding: 80px 0 72px; background: var(--white); border-bottom: 1px solid var(--border); }
+  .story-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 56px;
+    align-items: start;
+  }
+  .story-tag {
+    display: inline-block;
+    background: var(--teal-dim);
+    border: 1px solid var(--teal-border);
+    border-radius: 6px;
+    padding: 6px 16px;
+    font-size: 0.73rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 36px;
+  }
+  .story p {
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: var(--body);
+    line-height: 1.84;
+    margin-bottom: 24px;
+  }
+  .story p strong { color: var(--text); font-weight: 800; }
+  .story p em { font-style: normal; font-weight: 800; color: var(--text); }
+
+  .story-quote {
+    margin-top: 36px;
+    padding: 24px 28px;
+    border-left: 3px solid var(--teal);
+    background: var(--teal-dim);
+    border-radius: 0 10px 10px 0;
+  }
+  .story-quote p {
+    font-size: 1.05rem;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 10px;
+    line-height: 1.72;
+  }
+  .story-quote cite {
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-style: normal;
+  }
+
+  .story-img {
+    height: 440px;
+    position: sticky;
+    top: 24px;
+  }
+
+  /* ── Full-width studio photo strip ── */
+  .studio-strip {
+    background: var(--off-white);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+    overflow: hidden;
+  }
+  .studio-strip .img-ph {
+    height: 380px;
+    border-radius: 0;
+    border: none;
+    border-top: none;
+    border-bottom: none;
+  }
+  .studio-strip .img-ph::before {
+    border-radius: 0;
+  }
+
+  /* ── Value stack (off-white) ── */
+  .value-section { padding: 88px 0; background: var(--off-white); border-bottom: 1px solid var(--border); }
+  .value-header { text-align: center; margin-bottom: 64px; }
+  .value-header h2 {
+    font-size: clamp(1.9rem, 3.8vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+    line-height: 1.06;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .value-header .sub { font-size: 1rem; font-weight: 600; color: var(--muted); }
+
+  .group-label {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--dim);
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--border-dark);
+    margin-bottom: 0;
+  }
+  .group-label:not(:first-child) { margin-top: 48px; }
+
+  .value-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .vi-body { flex: 1; }
+  .vi-name { font-size: 1.02rem; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+  .vi-desc { font-size: 0.95rem; font-weight: 600; color: var(--muted); line-height: 1.7; }
+  .vi-price {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--gold-deep);
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+    padding-top: 2px;
+  }
+
+  .value-total {
+    background: var(--black);
+    border-radius: 16px;
+    padding: 32px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 44px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .vt-label { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.38); margin-bottom: 8px; }
+  .vt-amount { font-size: 2.1rem; font-weight: 900; color: #fff; line-height: 1; font-variant-numeric: tabular-nums; }
+  .vt-right { text-align: right; }
+  .vt-your-label { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .vt-your-price { font-size: 2.1rem; font-weight: 900; color: var(--gold); line-height: 1; }
+
+  /* ── Testimonial carousel (white) ── */
+  .testimonials-section { padding: 88px 0; background: var(--white); border-bottom: 1px solid var(--border); overflow: hidden; }
+  .testimonials-head { margin-bottom: 44px; padding: 0 24px; max-width: 900px; margin-left: auto; margin-right: auto; }
+  .testimonials-head h2 {
+    font-size: clamp(1.9rem, 3.8vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+    line-height: 1.06;
+    color: var(--text);
+    margin-bottom: 44px;
+  }
+
+  .carousel-track-wrap {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 40px 20px;
+    scrollbar-width: none;
+  }
+  .carousel-track-wrap::-webkit-scrollbar { display: none; }
+  .carousel-track {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+  }
+  .carousel-card {
+    width: 280px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .carousel-card .img-ph {
+    height: 320px;
+    border-radius: 14px;
+  }
+  .carousel-card.quote-card {
+    width: 320px;
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 320px;
+  }
+  .qc-text {
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: var(--body);
+    line-height: 1.76;
+    flex: 1;
+  }
+  .qc-name {
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-top: 20px;
+  }
+  .qc-role {
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--dim);
+    margin-top: 3px;
+  }
+  .carousel-scroll-hint {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  /* ── What Changes (off-white) ── */
+  .changes-section { padding: 88px 0; background: var(--off-white); border-bottom: 1px solid var(--border); }
+  .changes-head { text-align: center; margin-bottom: 52px; }
+  .changes-head h2 {
+    font-size: clamp(1.9rem, 3.8vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+    line-height: 1.06;
+    color: var(--text);
+  }
+  .changes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .change-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 30px 26px;
+  }
+  .change-num {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 12px;
+  }
+  .change-title {
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+  .change-desc { font-size: 0.95rem; font-weight: 600; color: var(--muted); line-height: 1.7; }
+
+  /* ── Founder (white) ── */
+  .founder-section { padding: 88px 0; background: var(--white); border-bottom: 1px solid var(--border); }
+  .founder-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .founder-img { height: 400px; position: sticky; top: 24px; }
+  .founder-head { margin-bottom: 32px; }
+  .founder-head h2 {
+    font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+    line-height: 1.06;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .stats-row {
+    display: flex;
+    border: 1px solid var(--border-dark);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 36px;
+    background: var(--off-white);
+    flex-wrap: wrap;
+  }
+  .stat {
+    flex: 1;
+    min-width: 120px;
+    padding: 24px 18px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-size: 1.8rem; font-weight: 900; color: var(--gold-deep); line-height: 1; margin-bottom: 7px; }
+  .stat-label { font-size: 0.78rem; font-weight: 600; color: var(--muted); line-height: 1.5; }
+
+  .founder-body p { font-size: 1.1rem; font-weight: 600; color: var(--body); line-height: 1.84; margin-bottom: 20px; }
+  .founder-body p:last-child { margin-bottom: 0; }
+
+  .founder-belief {
+    margin-top: 28px;
+    padding: 22px 26px;
+    border-left: 3px solid var(--teal);
+    background: var(--teal-dim);
+    border-radius: 0 10px 10px 0;
+  }
+  .founder-belief p {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.72;
+    margin-bottom: 0;
+  }
+
+  /* ── Guarantee (off-white) ── */
+  .guarantee-section { padding: 88px 0; background: var(--off-white); border-bottom: 1px solid var(--border); }
+  .guarantee-card {
+    background: var(--white);
+    border: 1px solid var(--border-dark);
+    border-radius: 16px;
+    padding: 38px 42px;
+    margin-bottom: 14px;
+  }
+  .guarantee-card:last-of-type { margin-bottom: 0; }
+  .guarantee-card h3 {
+    font-size: 1.18rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    margin-bottom: 13px;
+  }
+  .guarantee-card h3 .gold { color: var(--gold-deep); }
+  .guarantee-card p { font-size: 1.05rem; font-weight: 600; color: var(--body); line-height: 1.8; }
+
+  /* ── Two Choices (white) ── */
+  .choices-section { padding: 88px 0; background: var(--white); border-bottom: 1px solid var(--border); }
+  .choices-head { text-align: center; margin-bottom: 52px; }
+  .choices-head h2 {
+    font-size: clamp(1.9rem, 3.8vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+    line-height: 1.06;
+    color: var(--text);
+  }
+  .choices-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .choice-card {
+    background: var(--off-white);
+    border: 1px solid var(--border-dark);
+    border-radius: 16px;
+    padding: 34px 30px;
+  }
+  .choice-card.good { border-color: var(--gold-deep); border-width: 2px; background: var(--white); }
+  .choice-card.bad { opacity: 0.52; }
+  .choice-label {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 13px;
+  }
+  .choice-card.good .choice-label { color: var(--gold-deep); }
+  .choice-title {
+    font-size: 1.08rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 1.18;
+    color: var(--text);
+    margin-bottom: 15px;
+  }
+  .choice-card p { font-size: 0.98rem; font-weight: 600; color: var(--body); line-height: 1.76; }
+  .choice-card p + p { margin-top: 13px; }
+
+  /* ── Applicant offer (off-white) ── */
+  .applicant-section { padding: 88px 0; background: var(--off-white); border-bottom: 1px solid var(--border); }
+  .applicant-head { text-align: center; margin-bottom: 44px; }
+  .applicant-head h2 {
+    font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+    color: var(--text);
+  }
+  .applicant-card {
+    background: var(--white);
+    border: 1px solid var(--border-dark);
+    border-radius: 18px;
+    padding: 42px 48px;
+  }
+  .applicant-card h3 {
+    font-size: 1.06rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    margin-bottom: 26px;
+  }
+  .applicant-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 30px; }
+  .applicant-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--body);
+    line-height: 1.7;
+  }
+  .applicant-list li::before { content: '✓'; color: var(--gold-deep); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+  .applicant-note {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--dim);
+    line-height: 1.76;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+  }
+
+  /* ── FAQ (white, expandable) ── */
+  .faq-section { padding: 88px 0; background: var(--white); border-bottom: 1px solid var(--border); }
+  .faq-head { margin-bottom: 48px; }
+  .faq-head h2 {
+    font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+    color: var(--text);
+  }
+  .faq-list {
+    border: 1px solid var(--border-dark);
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--off-white);
+  }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text);
+    transition: background 0.15s;
+  }
+  .faq-q:hover { background: var(--light-gray); }
+  .faq-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: var(--gold-deep);
+    font-weight: 700;
+    transition: transform 0.25s, background 0.2s, border-color 0.2s;
+    user-select: none;
+  }
+  .faq-item.open .faq-icon {
+    transform: rotate(45deg);
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--black);
+  }
+  .faq-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.32s ease;
+  }
+  .faq-a {
+    padding: 0 32px 26px;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--body);
+    line-height: 1.8;
+  }
+
+  /* ── Final CTA (dark bookend) ── */
+  .final-cta {
+    padding: 100px 0;
+    text-align: center;
+    background: var(--dark);
+  }
+  .final-cta h2 {
+    font-size: clamp(2.2rem, 5vw, 4.2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.0;
+    margin-bottom: 20px;
+    text-wrap: balance;
+    color: #fff;
+  }
+  .final-cta .sub {
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: var(--hero-muted);
+    max-width: 460px;
+    margin: 0 auto 40px;
+    line-height: 1.74;
+  }
+  .deadline { font-size: 0.75rem; color: var(--hero-dim); margin-top: 18px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* ── Footer ── */
+  .site-footer {
+    background: var(--black);
+    border-top: 1px solid #1a1a1a;
+    text-align: center;
+    padding: 32px 24px;
+  }
+  .site-footer a { color: rgba(255,255,255,0.35); font-size: 0.87rem; text-decoration: none; letter-spacing: 0.06em; }
+  .site-footer a:hover { color: var(--gold); }
+  .disclaimer {
+    font-size: 0.73rem;
+    color: rgba(255,255,255,0.18);
+    line-height: 1.7;
+    max-width: 620px;
+    margin: 16px auto 0;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 800px) {
+    .story-layout { grid-template-columns: 1fr; }
+    .story-img { position: static; height: 300px; }
+    .founder-layout { grid-template-columns: 1fr; }
+    .founder-img { position: static; height: 280px; order: -1; }
+  }
+  @media (max-width: 660px) {
+    .changes-grid { grid-template-columns: 1fr; }
+    .choices-grid { grid-template-columns: 1fr; }
+    .stats-row { flex-direction: column; }
+    .stat { border-right: none; border-bottom: 1px solid var(--border); }
+    .stat:last-child { border-bottom: none; }
+    .guarantee-card { padding: 26px 22px; }
+    .applicant-card { padding: 26px 22px; }
+    .faq-q { padding: 20px 22px; }
+    .faq-a { padding: 0 22px 22px; }
+    .value-total { flex-direction: column; }
+    .vt-right { text-align: left; }
+    .hero { padding: 60px 0 56px; }
+    .choice-card { padding: 26px 20px; }
+    .carousel-track-wrap { padding: 0 20px 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-hl .ink { animation: none; }
+    .faq-body { transition: none; }
+    .faq-icon { transition: none; }
+  }
+</style>
+<!-- Banner -->
+<div class="d139-banner">DEFINE139@GMAIL.COM   /   (304) 320 – 7869</div>
+<!-- Header (dark) -->
+<header class="d139-header">
+<a href="https://www.define139.com">
+<img alt="Define139 Training &amp; Fitness" src="{{ASSETS}}logo.png"/>
+</a>
+</header>
+<!-- Hero (dark) -->
+<section class="hero">
+<div class="wrap">
+<div class="badge-row">
+<div class="badge"><span class="dot"></span>Celebrating 8 Years</div>
+<div class="badge"><span class="dot"></span>8 Months Free  ·  One Winner</div>
+</div>
+<p style="font-size:0.78rem;font-weight:800;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">The Great Eight Metabolic Mapping Giveaway</p>
+<h1 class="hero-hl">
+      8 Years.<br/>8 Months.<br/><span class="ink">One Amazing<br/>Giveaway.</span>
+</h1>
+<p class="hero-sub">Win 8 months of personalized weight-loss coaching — completely free. I’m celebrating Define139’s 8th anniversary by giving one woman everything I have to offer. Enter in five minutes.</p>
+<a class="btn-gold" href="#apply">Enter the Giveaway</a>
+<span class="btn-note">Takes 5 minutes  ·  Everyone who enters moves forward</span>
+<p class="value-line">8 months of personalized coaching. Free if you’re chosen.</p>
+</div>
+</section>
+<!-- Gold divider -->
+<div class="hero-divider"></div>
+<!-- Story — Greta's voice (white) -->
+<section class="story">
+<div class="wrap-md">
+<div class="story-layout">
+<div class="story-text">
+<div class="story-tag">A Note From Greta</div>
+<p>Eight years ago, I started Define139 because I kept watching women work harder than they should have had to — and still not get the answers they deserved. That hasn’t changed. It’s why I’m still here.</p>
+<p>If you’ve tried to lose weight and couldn’t make it stick, I want you to hear this: <strong>your body is not broken.</strong> It never was. It just hasn’t had the right understanding behind it.</p>
+<p>Every plan you’ve followed was built for someone else. What I do with Metabolic Mapping is build it from <em>you</em> — from how your body actually works, what it’s actually asking for, and who you actually are. You were made for more than guessing.</p>
+<p>To celebrate eight years of this work, I’m giving away eight months of personalized coaching to one woman. No cost. No catch. Just a real shot at finally having the right plan.</p>
+<div class="story-quote">
+<p>“This work has never just been about the body. It’s about helping you trust yourself again — and believe that the right conditions can change everything.”</p>
+<cite>Greta — Founder, Define139 Training &amp; Fitness</cite>
+</div>
+</div>
+<div class="story-img img-ph teal-ph">
+<div class="img-ph-inner">
+<span class="img-ph-icon">📷</span>
+<span class="img-ph-label">Photo: Greta</span>
+<span class="img-ph-tag">Replace with portrait</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Full-width community photo strip -->
+<div class="studio-strip">
+<div class="img-ph" style="height:360px;">
+<div class="img-ph-inner">
+<span class="img-ph-icon">📷</span>
+<span class="img-ph-label">Define139 Community Photo</span>
+<span class="img-ph-tag">Replace with community, coaching, or brand photo</span>
+</div>
+</div>
+</div>
+<!-- Value Stack (off-white) -->
+<section class="value-section">
+<div class="wrap">
+<div class="value-header">
+<span class="eyebrow">Here’s What I’m Giving Away</span>
+<h2>8 Months of <span class="gold">Personalized Coaching</span></h2>
+<p class="sub">One winner gets all of this at zero cost.</p>
+</div>
+<div class="group-label">The Core Program</div>
+<div class="value-item">
+<div class="vi-body">
+<div class="vi-name">The Metabolic Mapping Assessment</div>
+<div class="vi-desc">A complete picture of how your metabolism works — your baseline, your hormonal signals, and the specific levers that actually move the needle for your body. Not a guess. A real picture, built from you.</div>
+</div>
+<div class="vi-price">$1,200</div>
+</div>
+<div class="value-item">
+<div class="vi-body">
+<div class="vi-name">8-Month Personalized Program Design</div>
+<div class="vi-desc">A custom training and nutrition plan built directly from your mapping results — one that reflects who you are, how you live, and what your body actually responds to. Not a template. Yours.</div>
+</div>
+<div class="vi-price">$1,600</div>
+</div>
+<div class="value-item">
+<div class="vi-body">
+<div class="vi-name">Monthly Coaching Reviews — 8 Sessions</div>
+<div class="vi-desc">Eight check-ins where I review your progress, adjust your plan, and make sure what’s on paper is actually working for your life. Just you, your body, and what it’s telling us.</div>
+</div>
+<div class="vi-price">$1,200</div>
+</div>
+<div class="value-item">
+<div class="vi-body">
+<div class="vi-name">Nutrition Blueprint</div>
+<div class="vi-desc">Not a calorie target — a complete guide to how, when, and what to eat based on your specific picture, and how to adjust it as your body and life change.</div>
+</div>
+<div class="vi-price">$500</div>
+</div>
+<div class="value-item">
+<div class="vi-body">
+<div class="vi-name">Define139 App Access</div>
+<div class="vi-desc">Every workout, every check-in, every coaching note in one place. Watch your progress come to life over time.</div>
+</div>
+<div class="vi-price">Included</div>
+</div>
+<div class="group-label">Bonuses</div>
+<div class="value-item">
+<div class="vi-body">
+<div class="vi-name">Fast-Start Momentum Plan</div>
+<div class="vi-desc">Your first two weeks mapped out in detail so you start with confidence, not confusion. No decision fatigue on day one — just what to do and when.</div>
+</div>
+<div class="vi-price">$200</div>
+</div>
+<div class="value-item">
+<div class="vi-body">
+<div class="vi-name">Complimentary “Get Started” Onboarding Call</div>
+<div class="vi-desc">A live call with me to walk through your program, your app, and your first week. You’ll finish it knowing exactly what to do and why — no guessing on day one.</div>
+</div>
+<div class="vi-price">$150</div>
+</div>
+<div class="value-total">
+<div>
+<div class="vt-label">Total Real Value</div>
+<div class="vt-amount">$4,850</div>
+</div>
+<div class="vt-right">
+<div class="vt-your-label">Your Price If Chosen</div>
+<div class="vt-your-price">Free</div>
+</div>
+</div>
+<div style="text-align:center;margin-top:48px;">
+<a class="btn-gold" href="#apply">Enter the Giveaway</a>
+<span class="btn-note dark">Not a discount. Not a payment plan. A full 8 months, free.</span>
+</div>
+</div>
+</section>
+<!-- Testimonial Carousel (white) -->
+<section class="testimonials-section">
+<div class="testimonials-head wrap-md">
+<span class="eyebrow teal">Women I’ve Had the Honor of Coaching</span>
+<h2>What It Feels Like<br/>to <span class="gold">Finally Know.</span></h2>
+</div>
+<div class="carousel-track-wrap">
+<div class="carousel-track">
+<div class="carousel-card quote-card">
+<p class="qc-text">“I had tried everything. Greta was the first person who looked at me — not just the plan — and said, let’s figure out what your body is actually asking for. That changed everything.”</p>
+<div>
+<div class="qc-name">Member Name</div>
+<div class="qc-role">Define139 Member — Replace with real testimonial</div>
+</div>
+</div>
+<div class="carousel-card">
+<div class="img-ph teal-ph" style="height:320px;">
+<div class="img-ph-inner">
+<span class="img-ph-icon">📷</span>
+<span class="img-ph-label">Member transformation or training photo</span>
+</div>
+</div>
+</div>
+<div class="carousel-card quote-card">
+<p class="qc-text">“I stopped feeling like something was wrong with me. There’s a real reason my body works the way it does — and now I understand it. I’m so grateful I found Define139.”</p>
+<div>
+<div class="qc-name">Member Name</div>
+<div class="qc-role">Define139 Member — Replace with real testimonial</div>
+</div>
+</div>
+<div class="carousel-card">
+<div class="img-ph" style="height:320px;">
+<div class="img-ph-inner">
+<span class="img-ph-icon">📷</span>
+<span class="img-ph-label">Community / class photo</span>
+</div>
+</div>
+</div>
+<div class="carousel-card quote-card">
+<p class="qc-text">“Eight months in and I don’t recognize the way I used to think about food and working out. It’s not about perfection anymore. It’s about understanding myself.”</p>
+<div>
+<div class="qc-name">Member Name</div>
+<div class="qc-role">Define139 Member — Replace with real testimonial</div>
+</div>
+</div>
+<div class="carousel-card">
+<div class="img-ph teal-ph" style="height:320px;">
+<div class="img-ph-inner">
+<span class="img-ph-icon">📷</span>
+<span class="img-ph-label">Results / member story photo</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class="carousel-scroll-hint">← Scroll to see more →</p>
+</section>
+<!-- What Changes (off-white) -->
+<section class="changes-section">
+<div class="wrap-md">
+<div class="changes-head">
+<span class="eyebrow">What I Know After 8 Years</span>
+<h2>What Changes When You <span class="gold">Know Yourself</span></h2>
+</div>
+<div class="changes-grid">
+<div class="change-item">
+<div class="change-num">01</div>
+<div class="change-title">You stop guessing. You start knowing.</div>
+<div class="change-desc">You have a specific body with a specific story. I build the understanding to match it — and you never have to wonder why something isn’t working again.</div>
+</div>
+<div class="change-item">
+<div class="change-num">02</div>
+<div class="change-title">You eat for your body, not the internet’s.</div>
+<div class="change-desc">Every nutrition decision I give you is built around your actual picture — not a protocol designed for someone else’s body, life, or season.</div>
+</div>
+<div class="change-item">
+<div class="change-num">03</div>
+<div class="change-title">Every workout has a reason.</div>
+<div class="change-desc">Every session fits a plan I build around how you recover, how you build, and what your body is asking for right now. Nothing is random.</div>
+</div>
+<div class="change-item">
+<div class="change-num">04</div>
+<div class="change-title">You trust yourself again.</div>
+<div class="change-desc">When you understand your body, you stop second-guessing every decision. You move through your days differently. You live in your body differently.</div>
+</div>
+<div class="change-item">
+<div class="change-num">05</div>
+<div class="change-title">The plateau stops here.</div>
+<div class="change-desc">Plateaus happen when plans run out of understanding. Metabolic Mapping gives your plan more to work with than anything generic ever will.</div>
+</div>
+<div class="change-item">
+<div class="change-num">06</div>
+<div class="change-title">You live into what you were made for.</div>
+<div class="change-desc">This has never been about a number on a scale. It’s about becoming the version of yourself you’ve known was possible — and finally having the path to get there.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Greta — first person (white) -->
+<section class="founder-section">
+<div class="wrap-md">
+<div class="founder-layout">
+<div class="founder-img img-ph teal-ph">
+<div class="img-ph-inner">
+<span class="img-ph-icon">📷</span>
+<span class="img-ph-label">Photo of Greta</span>
+<span class="img-ph-tag">Replace with headshot or action photo</span>
+</div>
+</div>
+<div>
+<div class="founder-head">
+<span class="eyebrow teal">Why I’m Doing This</span>
+<h2>8 years of this work.<br/><span class="gold">This is how I celebrate.</span></h2>
+</div>
+<div class="stats-row">
+<div class="stat">
+<div class="stat-num">8</div>
+<div class="stat-label">Years at Define139</div>
+</div>
+<div class="stat">
+<div class="stat-num">100s</div>
+<div class="stat-label">Women I’ve had the honor of coaching</div>
+</div>
+<div class="stat">
+<div class="stat-num">8</div>
+<div class="stat-label">Years building something I believe in</div>
+</div>
+</div>
+<div class="founder-body">
+<p>I didn’t start Define139 because it was a smart business move. I started it because I kept watching women work harder than they should have had to — and still not get the answers they deserved. Eight years later, that’s still what gets me up in the morning.</p>
+<p>What I coach isn’t just the physical. It’s the whole person — the way you think about your body, the way you talk to yourself, the belief that you were made for more than you’ve been settling for. When a woman feels truly seen and supported in that process, everything changes.</p>
+<p>Metabolic Mapping is the most specific thing I do. It’s also where I’ve seen the most lasting change — not just in the body, but in how women carry themselves once they finally understand what’s been working against them.</p>
+<p>On our eighth anniversary, I want to give that to one woman. Completely free. Because this work calls for something big.</p>
+</div>
+<div class="founder-belief">
+<p>“I believe every woman I work with has something in her that just needs the right conditions to come alive. My job is to help her find it — and to be right there with her while she does.”</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Guarantee (off-white) -->
+<section class="guarantee-section">
+<div class="wrap">
+<span class="eyebrow">My Promise to You</span>
+<div class="guarantee-card">
+<h3>If You <span class="gold">Win</span></h3>
+<p>Show up and do the work. If you complete your assessment and follow your program through the first 30 days, you will have a real, complete picture of how your metabolism works. If for any reason you don’t feel like you have that, I keep working with you — at no cost — until you do. The only way to lose is to not show up.</p>
+</div>
+<div class="guarantee-card">
+<h3>If You <span class="gold">Don’t Win</span></h3>
+<p>One woman wins the full 8 months. But everyone who enters gets a private path forward — a conversation with me about where you are, and an offer to get started on your Metabolic Mapping journey that isn’t shared anywhere else. You don’t walk away empty-handed. Entering always moves you forward.</p>
+</div>
+</div>
+</section>
+<!-- Two Choices (white) -->
+<section class="choices-section">
+<div class="wrap-md">
+<div class="choices-head">
+<span class="eyebrow">It Comes Down to This</span>
+<h2>You’ve Got <span class="gold">Two Choices</span></h2>
+</div>
+<div class="choices-grid">
+<div class="choice-card bad">
+<div class="choice-label">Choice One</div>
+<div class="choice-title">Keep Going as You Are.</div>
+<p>You go back to what you’ve been doing. Try another adjustment, another approach, another round of wondering what you’re missing.</p>
+<p>Eight months from now, you’re in the same place — a little more frustrated, a little further from the version of yourself you know is in there.</p>
+</div>
+<div class="choice-card good">
+<div class="choice-label">Choice Two</div>
+<div class="choice-title">Put Your Name In. Let Me Help.</div>
+<p>Five minutes. Maybe you win and get 8 full months of personalized coaching at zero cost. Maybe you don’t — and I still reach out personally with a private offer to get started.</p>
+<p>Either way, you move forward. You stop guessing. I’m here.</p>
+</div>
+</div>
+<div style="text-align:center;margin-top:52px;">
+<a class="btn-gold" href="#apply">Enter the Giveaway</a>
+<span class="btn-note dark">Not a discount. Not a payment plan. A full 8 months, free.</span>
+</div>
+</div>
+</section>
+<!-- Applicant Offer (off-white) -->
+<section class="applicant-section" id="apply">
+<div class="wrap">
+<div class="applicant-head">
+<span class="eyebrow teal">For Everyone Who Enters</span>
+<h2>Didn’t win? <span class="gold">I’m still reaching out.</span></h2>
+</div>
+<div class="applicant-card">
+<h3>What I Do For Every Applicant</h3>
+<ul class="applicant-list">
+<li>I personally reach out with a conversation about where you are and what you’re working toward</li>
+<li>I share a private offer to begin your Metabolic Mapping journey — not posted anywhere, shared directly with you</li>
+<li>I map out your first steps so you know exactly where to begin and what to expect</li>
+<li>No pressure, no pitch — just a real conversation about you and what your body actually needs</li>
+</ul>
+<p class="applicant-note">I reach out directly after you apply. There is no cost and no obligation. Everyone who enters moves forward in some way.</p>
+</div>
+<div style="text-align:center;margin-top:40px;">
+<a class="btn-gold" href="#">Enter the Great Eight Giveaway</a>
+<span class="btn-note dark">Takes 5 minutes  ·  I’ll be in touch personally after you apply</span>
+</div>
+</div>
+</section>
+<!-- FAQ (white, expandable) -->
+<section class="faq-section">
+<div class="wrap">
+<div class="faq-head">
+<span class="eyebrow">Straight Answers</span>
+<h2>Questions I Hear Most</h2>
+</div>
+<div class="faq-list">
+<div class="faq-item">
+<button aria-expanded="false" class="faq-q">
+          What exactly is Metabolic Mapping?
+          <span aria-hidden="true" class="faq-icon">+</span>
+</button>
+<div class="faq-body" role="region">
+<p class="faq-a">It’s how I build a personalized picture of how your metabolism works — your baseline, your hormonal signals, how your body responds to training and food. From that picture, I design your program. Not a template. One built specifically for you.</p>
+</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-q">
+          Do I need to be a current Define139 member to enter?
+          <span aria-hidden="true" class="faq-icon">+</span>
+</button>
+<div class="faq-body" role="region">
+<p class="faq-a">No. This giveaway is open to any woman who wants to understand her metabolism and is ready to do the work. You don’t need to be a member first — that’s kind of the point.</p>
+</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-q">
+          How does the giveaway actually work?
+          <span aria-hidden="true" class="faq-icon">+</span>
+</button>
+<div class="faq-body" role="region">
+<p class="faq-a">Everyone who applies enters. Applications close September 1st and I announce the winner on September 2nd. One woman receives the full 8-month Metabolic Mapping program — assessment, program design, coaching sessions, and all bonuses — at no cost. Not a discount. The full thing, free.</p>
+</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-q">
+          I’ve tried other programs and they haven’t worked. Is this different?
+          <span aria-hidden="true" class="faq-icon">+</span>
+</button>
+<div class="faq-body" role="region">
+<p class="faq-a">That’s exactly who I built Metabolic Mapping for. If other plans haven’t worked, it’s almost always because they were built on assumptions about your body that weren’t true for you. I start from who you actually are.</p>
+</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-q">
+          Where do you coach — is this online?
+          <span aria-hidden="true" class="faq-icon">+</span>
+</button>
+<div class="faq-body" role="region">
+<p class="faq-a">Yes — Define139 is fully online. I work with women remotely through our app and coaching platform, so it doesn’t matter where you live. Everything is delivered digitally, and I’m with you every step of the way.</p>
+</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-q">
+          What happens if I don’t win?
+          <span aria-hidden="true" class="faq-icon">+</span>
+</button>
+<div class="faq-body" role="region">
+<p class="faq-a">I reach out to everyone who applies. You’ll get a private offer from me to begin your Metabolic Mapping journey — not posted anywhere online, shared with you directly. No one who enters walks away without a path forward.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA (dark bookend) -->
+<section class="final-cta">
+<div class="wrap">
+<span class="eyebrow light">The Great Eight Metabolic Mapping Giveaway</span>
+<h2>8 Years.<br/>8 Months.<br/><span style="color:var(--gold);">One Amazing Giveaway.</span></h2>
+<p class="sub">Put your name in. Win 8 months of personalized coaching or get a private offer directly from me. Either way, today is the day something changes.</p>
+<a class="btn-gold" href="#apply">Enter the Giveaway</a>
+<p class="deadline">Applications close September 1st  ·  Winner announced September 2nd</p>
+</div>
+</section>
+<!-- Footer -->
+<footer class="site-footer">
+<a href="https://www.define139.com">← Return to Define139.com</a>
+<p class="disclaimer">Results vary. Individual outcomes depend on effort, consistency, and factors personal to each member. Nothing on this page is medical advice. No purchase is necessary to enter the Great Eight Metabolic Mapping Giveaway. One winner will be chosen on September 2nd. Define139 Training &amp; Fitness  ·  Bluefield, WV</p>
+</footer>
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const body = item.querySelector('.faq-body');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-body').style.maxHeight = '0';
+        el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
