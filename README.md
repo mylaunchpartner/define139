@@ -31,7 +31,38 @@ Every page that was code-only in Webflow is here. Pages that needed several Webf
 | `/free-threshold-focus-ebook-download` | `free-threshold-focus-ebook-download` | 1 | R6PLuv3djqu4JUp1vy3a |
 | `/check-your-inbox-for-your-free-threshold-focus-ebook` | `check-your-inbox-for-your-free-threshold-focus-ebook` | 1 | bLEURIKZGFaU4MH33FTf |
 
-Pages built with the Webflow designer (not code) are not in this repo yet.
+### Added Nov 10, 2026 (MST, UTC-07:00)
+
+The rest of the Webflow site. Every published Webflow page is now in this repo; only the unpublished draft `/online-store` was left out.
+
+| Live URL | `data-page` / file | Source | GHL page ID |
+|---|---|---|---|
+| `/gym-membership-selection` | `gym-membership-selection` | code (as-is) | _(not built yet)_ |
+| `/online-membership-selection` | `online-membership-selection` | code (as-is) | _(not built yet)_ |
+| `/great-eight-scholarship` | `great-eight-scholarship` | code (as-is) | _(not built yet)_ |
+| `/metabolic-mapping` | `metabolic-mapping` | designer (rebuilt) | _(not built yet)_ |
+| `/24-7-womens-strength-studio` | `24-7-womens-strength-studio` | designer (rebuilt) | _(not built yet)_ |
+| `/define139-the-slowing-of-the-metabolism` | `define139-the-slowing-of-the-metabolism` | designer (rebuilt) | _(not built yet)_ |
+| `/define139-summer-sculpt` | `define139-summer-sculpt` | designer (rebuilt) | _(not built yet)_ |
+| `/the-cortisol-connection` | `the-cortisol-connection` | designer (rebuilt) | _(not built yet)_ |
+| `/7-day-tracker` | `7-day-tracker` | designer (rebuilt) | _(not built yet)_ |
+| `/define139-free-fb-group-fat-loss-faith-for-busy-christian-women` | `define139-free-fb-group-fat-loss-faith-for-busy-christian-women` | designer (rebuilt) | _(not built yet)_ |
+| `/macro-calculator-define139` | `macro-calculator-define139` | designer (rebuilt) | _(not built yet)_ |
+| `/class-pass-purchased` | `class-pass-purchased` | designer (rebuilt) | _(not built yet)_ |
+| `/class-pass` | `class-pass` | designer (rebuilt) | _(not built yet)_ |
+| `/metabolism-reset-guide-download` | `metabolism-reset-guide-download` | designer (rebuilt) | _(not built yet)_ |
+| `/check-your-inbox` | `check-your-inbox` | new | _(not built yet)_ |
+| 404 page | `404` | designer (rebuilt) | _(set as the site's 404 page in GHL)_ |
+
+### Designer-built pages
+
+Pages that were built in the Webflow designer (not code embeds) were rebuilt from their published HTML:
+
+- `webflow/site.css` is Webflow's stylesheet, scoped under `.d139-wf` so it can't restyle anything else on the GHL page. Fonts and background images it uses are in `assets/wf/`.
+- `webflow/wf-lite.js` replaces the parts of Webflow's script those pages used: the mobile menu, FAQ accordions, pricing tabs, testimonial sliders and video popups. Scroll and hover animations were dropped, so content simply shows.
+- Page files load both with `{{BASE}}` (repo root), e.g. `{{BASE}}webflow/site.css`.
+- Webflow forms were replaced with GHL form embeds inside `.d139-form-slot` elements. The footer "Send a message" form on these pages is the **Default Contact Capture Form** (same registered SMS opt-in as `/request-more-info`). The four free-guide pages use their own GHL forms (`Slowing Metabolism eBook`, `Cortisol Connection eBook`, `7-Day Reset Tracker`, `Metabolism Reset Guide` – Guide Request), copied from the Threshold Focus form; all four redirect to `/check-your-inbox`.
+- Rendering was checked against the live Webflow pages at desktop and phone widths. The Webflow lander pages scrolled sideways on phones; the rebuilt ones don't.
 
 `/privacy-policy` and `/terms-of-service` must keep these exact paths. The toll-free SMS registration points reviewers to them.
 
@@ -158,6 +189,29 @@ SEO titles and descriptions are copied from the live Webflow pages.
 <div id="d139-root" data-page="check-your-inbox-for-your-free-threshold-focus-ebook"></div>
 <script src="https://mylaunchpartner.github.io/define139/loader.js"></script>
 ```
+
+## GHL snippets for the pages added Nov 10
+
+Same one-line snippet as above with each page's `data-page`. SEO titles and descriptions copied from Webflow:
+
+- `/gym-membership-selection` — **Define139 | Gym Membership Selection** — Choose your membership. Find the program that fits your goals, schedule, and lifestyle.
+- `/online-membership-selection` — **Define139 | Online Membership Selection** — Work with a Define139 coach from anywhere in the world. Science-backed nutrition, personalized training, and real accountability — delivered completely online. Every membership includes access to our coaching team and the Define139 app.
+- `/great-eight-scholarship` — **The Great Eight Scholarship | Define139 Training and Fitness** — Win 8 months of personalized weight-loss coaching — completely free. I’m celebrating Define139’s 8th anniversary by giving one woman everything I have to offer. Enter in five minutes.
+- `/metabolic-mapping` — **Define139 | Metabolic Mapping** — Restore your metabolism, renew your energy, and rebuild your strength—without fads or extremes. Metabolic Mapping is a faith-based, science-backed coaching program designed to help women 35–65 achieve sustainable fat loss and vibrant health.
+- `/24-7-womens-strength-studio` — **Define139 | 24/7 Women's Strength Studio** — Restore your metabolism, renew your energy, and rebuild your strength—without fads or extremes. Metabolic Mapping is a faith-based, science-backed coaching program designed to help women 35–65 achieve sustainable fat loss and vibrant health.
+- `/define139-the-slowing-of-the-metabolism` — **Define139 | The Slowing of The Metabolism** — Restore your metabolism, renew your energy, and rebuild your strength—without fads or extremes. Metabolic Mapping is a faith-based, science-backed coaching program designed to help women 35–65 achieve sustainable fat loss and vibrant health.
+- `/define139-summer-sculpt` — **Define139 | Sculpted Summer Program** — This digital guide includes weekly strength workouts with video links, high-protein meal plans, mindset coaching videos, Scripture-based devotionals, journal prompts, and habit trackers—all in one beautifully structured PDF. No more guessing. Just sustainable fat loss with grace, purpose, and a plan that works.
+- `/the-cortisol-connection` — **Define139 | The Cortisol Connection** — Restore your metabolism, renew your energy, and rebuild your strength—without fads or extremes. Metabolic Mapping is a faith-based, science-backed coaching program designed to help women 35–65 achieve sustainable fat loss and vibrant health.
+- `/7-day-tracker` — **Define139 | 7-Day Faith-Based Reset Tracker** — Restore your metabolism, renew your energy, and rebuild your strength—without fads or extremes. Metabolic Mapping is a faith-based, science-backed coaching program designed to help women 35–65 achieve sustainable fat loss and vibrant health.
+- `/define139-free-fb-group-fat-loss-faith-for-busy-christian-women` — **Define139 | Free FB Group Fat Loss & Faith For Busy Christian Women** — Restore your metabolism, renew your energy, and rebuild your strength—without fads or extremes. Metabolic Mapping is a faith-based, science-backed coaching program designed to help women 35–65 achieve sustainable fat loss and vibrant health.
+- `/macro-calculator-define139` — **Macro Calculator | Define139** — Restore your metabolism, renew your energy, and rebuild your strength—without fads or extremes. Metabolic Mapping is a faith-based, science-backed coaching program designed to help women 35–65 achieve sustainable fat loss and vibrant health.
+- `/class-pass-purchased` — **Class Pass Purchased! | Define139** — Thank you for your purchase of the class pass at Define139 Women's Strength Studio!
+- `/class-pass` — **Get Your Class Pass | Define139** — New Group Classes have been added at Define139 Women's Strength Studio! Tuesdays and Thursdays at 5:30 pm, Saturdays at 9 am. A mix of Pilates, Move Well, and Move & Groove classes! Special pricing for members. 8-week class pass program.
+- `/metabolism-reset-guide-download` — **Metabolism Reset Guide | Define139 Training & Fitness** — Download your FREE guide here to looking and feeling your best at any age!
+- `/404` — **Not Found** — _(no description in Webflow; add one)_
+- `/check-your-inbox` — **Check Your Inbox | Define139** — _(no description in Webflow; add one)_
+
+Several lander pages reused the Metabolic Mapping description in Webflow; worth giving each its own.
 
 ## Making a change
 

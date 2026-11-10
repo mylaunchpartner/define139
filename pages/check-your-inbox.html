@@ -1,0 +1,137 @@
+<!-- Live URL: /check-your-inbox -->
+<!--
+  Define139 — shared confirmation page for the free guides (Slowing Metabolism,
+  Cortisol Connection, 7-Day Reset Tracker, Metabolism Reset Guide). Same design as the
+  Threshold Focus confirmation page.
+  Paste into ONE embed element (Webflow Embed or GHL Custom JS/HTML). Section: full width, 0 padding.
+  Each guide's GHL form redirects here; a GHL workflow emails the guide itself.
+-->
+<style>
+.d139-tfc{
+  --bg:#FFFFFF; --bg-2:#F4F6F7; --card:#FFFFFF; --border:#E3E7EA;
+  --gold:#E0BF44; --gold-hi:#F0D060; --gold-text:#8A6F12; --steel:#5F869C; --steel-dk:#4A6E82;
+  --ink:#0A0A0A; --text:#3D4448; --muted:#6B7378;
+  width:100vw; max-width:100vw; position:relative;
+  margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
+  font-family:Arial,'Helvetica Neue',Helvetica,sans-serif; color:var(--text); background:var(--bg-2);
+  line-height:1.65; font-size:17px; overflow-x:hidden; box-sizing:border-box; min-height:100vh;
+  display:flex; flex-direction:column;
+}
+.d139-tfc *,.d139-tfc *::before,.d139-tfc *::after{box-sizing:border-box}
+.d139-tfc h1,.d139-tfc h2{font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;line-height:1.02;margin:0;color:var(--ink)}
+.d139-tfc p{margin:0}
+.d139-tfc .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.d139-tfc .kicker{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-text);margin-bottom:14px}
+
+/* Top bar + logo, same as the landing page */
+.d139-tfc .topbar{background:#1F1A0C;color:var(--gold);text-align:center;font-size:13px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;padding:12px 16px}
+.d139-tfc .topbar a{color:var(--gold);text-decoration:none}
+.d139-tfc .top{background:radial-gradient(60% 90% at 50% 100%,rgba(224,191,68,.14),transparent 70%),var(--bg);
+  padding:14px 0 0;text-align:center}
+.d139-tfc .logo{display:block;margin:0 auto;width:180px;max-width:52%;height:auto}
+
+/* Hero message */
+.d139-tfc .hero{padding:36px 0 56px;text-align:center}
+.d139-tfc h1{font-size:clamp(40px,6vw,64px);margin-bottom:16px}
+.d139-tfc .lead{font-size:19px;max-width:42ch;margin:0 auto}
+.d139-tfc .sill{height:4px;background:var(--gold)}
+
+/* Body */
+.d139-tfc .main{padding:56px 0 80px;flex:1}
+.d139-tfc .card{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:2px;
+  padding:28px;margin:0 auto;max-width:560px;box-shadow:0 30px 50px -30px rgba(20,30,35,.25)}
+.d139-tfc .card h2{font-size:20px;margin-bottom:14px}
+.d139-tfc .card ul{margin:0;padding:0 0 0 20px}
+.d139-tfc .card li{margin:6px 0}
+.d139-tfc .card li::marker{color:var(--gold)}
+.d139-tfc .card strong{color:var(--ink)}
+
+.d139-tfc .next{margin:52px auto 0;max-width:560px;border-top:1px solid var(--border);padding-top:40px}
+.d139-tfc .next h2{font-size:26px;margin-bottom:12px}
+.d139-tfc .next p{margin-bottom:26px}
+.d139-tfc .btns{display:flex;flex-wrap:wrap;gap:12px}
+.d139-tfc .btn{display:inline-block;font-weight:700;font-size:14px;letter-spacing:.16em;text-transform:uppercase;
+  text-decoration:none;padding:17px 28px;border-radius:2px;transition:background .15s,color .15s}
+.d139-tfc .btn.primary{background:var(--gold);color:var(--ink)}
+.d139-tfc .btn.primary:hover{background:var(--gold-hi)}
+.d139-tfc .btn.ghost{border:1px solid var(--steel);color:var(--steel-dk);background:#fff}
+.d139-tfc .btn.ghost:hover{background:#EEF3F6}
+.d139-tfc a:focus-visible{outline:2px solid var(--steel);outline-offset:3px}
+
+.d139-tfc footer{background:#0A0A0A;color:#888;font-size:13px;letter-spacing:.06em;padding:30px 0;text-align:center;line-height:2}
+.d139-tfc footer strong{color:var(--gold)}
+.d139-tfc footer a{color:#888;text-decoration:none;margin:0 10px}
+.d139-tfc footer a:hover{color:#fff}
+
+@media (max-width:520px){
+  .d139-tfc{font-size:16px}
+  .d139-tfc .topbar{font-size:11px;letter-spacing:.1em}
+  .d139-tfc .hero{padding:28px 0 44px}
+  .d139-tfc .main{padding:40px 0 64px}
+  .d139-tfc .card{padding:22px 18px}
+  .d139-tfc .btn{width:100%;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+  .d139-tfc .btn{transition:none}
+}
+</style>
+<div class="d139-tfc">
+<div class="topbar">
+<a href="mailto:define139@gmail.com">define139@gmail.com</a>
+<span aria-hidden="true">  /  </span>
+<a href="tel:+13043207869">(304) 320 – 7869</a>
+</div>
+<header class="top">
+<img alt="Define139 Training &amp; Fitness" class="logo" src="{{ASSETS}}logo.png"/>
+<div class="wrap hero">
+<p class="kicker">Your Free Guide</p>
+<h1>You got it!</h1>
+<p class="lead">Your free guide is headed to your email right now.</p>
+</div>
+<div class="sill"></div>
+</header>
+<main class="main">
+<div class="wrap">
+<div class="card">
+<h2>Don’t see it in a few minutes?</h2>
+<ul>
+<li>Look for an email from <strong>Greta at Define139</strong>.</li>
+<li>Check your Promotions, Updates, or Spam folder.</li>
+<li>Move it to your main inbox so future emails land there too.</li>
+</ul>
+</div>
+<div class="next">
+<h2>While you wait</h2>
+<p>See how Metabolic Mapping works, or find out whether working with one of our nutrition and strength coaches could help you.</p>
+<div class="btns">
+<a class="btn primary" href="/metabolic-mapping-online-programs">Explore Metabolic Mapping</a>
+<a class="btn ghost" href="https://api.leadconnectorhq.com/widget/bookings/metabolic-mapping-info-call" rel="noopener" target="_blank">See if coaching is a fit</a>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<div class="wrap">
+      © 2026 <strong>Define139 Training &amp; Fitness</strong>  |  All Rights Reserved<br/>
+      495 Blue Prince Road, Suite 13  |  Bluefield, WV 24701<br/>
+<a href="https://www.define139.com/privacy-policy">Privacy Policy</a><a href="https://www.define139.com/terms-of-service">Terms of Service</a>
+</div>
+</footer>
+</div>
+<script>
+/* Full-width breakout that excludes the scrollbar (100vw alone overshoots by the
+   scrollbar width and causes a sideways scrollbar on desktop). */
+(function(){
+  function fit(){
+    var el=document.querySelector('.d139-tfc'); if(!el||!el.parentElement)return;
+    var vw=document.documentElement.clientWidth;
+    var left=el.parentElement.getBoundingClientRect().left+window.scrollX;
+    el.style.width=vw+'px'; el.style.maxWidth=vw+'px';
+    el.style.marginLeft=(-left)+'px'; el.style.marginRight='0';
+  }
+  fit();
+  window.addEventListener('load',fit);
+  window.addEventListener('resize',fit);
+})();
+</script>
