@@ -35,24 +35,36 @@ Every page that was code-only in Webflow is here. Pages that needed several Webf
 
 The rest of the Webflow site. Every published Webflow page is now in this repo; only the unpublished draft `/online-store` was left out.
 
+**Website pages** (Sites → Websites → Define139):
+
 | Live URL | `data-page` / file | Source | GHL page ID |
 |---|---|---|---|
-| `/gym-membership-selection` | `gym-membership-selection` | code (as-is) | _(not built yet)_ |
-| `/online-membership-selection` | `online-membership-selection` | code (as-is) | _(not built yet)_ |
-| `/great-eight-scholarship` | `great-eight-scholarship` | code (as-is) | _(not built yet)_ |
-| `/metabolic-mapping` | `metabolic-mapping` | designer (rebuilt) | _(not built yet)_ |
-| `/24-7-womens-strength-studio` | `24-7-womens-strength-studio` | designer (rebuilt) | _(not built yet)_ |
-| `/define139-the-slowing-of-the-metabolism` | `define139-the-slowing-of-the-metabolism` | designer (rebuilt) | _(not built yet)_ |
-| `/define139-summer-sculpt` | `define139-summer-sculpt` | designer (rebuilt) | _(not built yet)_ |
-| `/the-cortisol-connection` | `the-cortisol-connection` | designer (rebuilt) | _(not built yet)_ |
-| `/7-day-tracker` | `7-day-tracker` | designer (rebuilt) | _(not built yet)_ |
-| `/define139-free-fb-group-fat-loss-faith-for-busy-christian-women` | `define139-free-fb-group-fat-loss-faith-for-busy-christian-women` | designer (rebuilt) | _(not built yet)_ |
-| `/macro-calculator-define139` | `macro-calculator-define139` | designer (rebuilt) | _(not built yet)_ |
-| `/class-pass-purchased` | `class-pass-purchased` | designer (rebuilt) | _(not built yet)_ |
-| `/class-pass` | `class-pass` | designer (rebuilt) | _(not built yet)_ |
-| `/metabolism-reset-guide-download` | `metabolism-reset-guide-download` | designer (rebuilt) | _(not built yet)_ |
-| `/check-your-inbox` | `check-your-inbox` | new | _(not built yet)_ |
-| 404 page | `404` | designer (rebuilt) | _(set as the site's 404 page in GHL)_ |
+| `/gym-membership-selection` | `gym-membership-selection` | code (as-is) | ucbSylHgtXiXDkGGL2tg |
+| `/online-membership-selection` | `online-membership-selection` | code (as-is) | 8m36OUmubmmMtI6PZouW |
+| `/great-eight-scholarship` | `great-eight-scholarship` | code (as-is) | M7ZpIuqIgiT9kEzh2Wg4 |
+| `/metabolic-mapping` | `metabolic-mapping` | designer (rebuilt) | aMtfMzuDPpcKLdGbTTjw |
+| `/24-7-womens-strength-studio` | `24-7-womens-strength-studio` | designer (rebuilt) | n4wpmG0ksA5MLa4Ksukr |
+| `/define139-summer-sculpt` | `define139-summer-sculpt` | designer (rebuilt) | za20nxaktz65qSc4jAnA |
+| `/define139-free-fb-group-fat-loss-faith-for-busy-christian-women` | `define139-free-fb-group-fat-loss-faith-for-busy-christian-women` | designer (rebuilt) | GYxYUJYAaloA2KnCd6iH |
+| `/macro-calculator-define139` | `macro-calculator-define139` | designer (rebuilt) | kXxtzEcVuaAfPDWRZWg2 |
+| `/class-pass` | `class-pass` | designer (rebuilt) | L0gMCk44NwXVNRIgk1Bf |
+| `/class-pass-purchased` | `class-pass-purchased` | designer (rebuilt) | 2wOnfwAugdTIBmzoJxww |
+| `/page-not-found` | `404` | designer (rebuilt) | YPyvuQPvVDLvCXjzo7Ml (set as the site's 404 page in GHL) |
+
+**Free-guide funnels** (Sites → Funnels). Every page that hands out a PDF is a two-step funnel: step 1 is the opt-in page, step 2 tells them to check their email. Each guide's GHL form redirects to its own step 2. Step paths keep the old Webflow URLs, so links already out there still work once the funnels are on the domain.
+
+| Funnel (ID) | Step | Live URL | `data-page` / file | GHL page ID |
+|---|---|---|---|---|
+| Free Guide: The Slowing of the Metabolism (`Iso8REsnF3zWCOSm1V8t`) | 1 | `/define139-the-slowing-of-the-metabolism` | `define139-the-slowing-of-the-metabolism` | qcnndnB2aNLIFHpcAK5Q |
+| | 2 | `/check-your-inbox-slowing-metabolism` | `check-your-inbox-slowing-metabolism` | n3UwpLsIgyYeLFXZdRJS |
+| Free Guide: The Cortisol Connection (`8vtj6pnhIUYaRdbmQmSz`) | 1 | `/the-cortisol-connection` | `the-cortisol-connection` | dIemtESRqlsZcPXsJ3Wb |
+| | 2 | `/check-your-inbox-cortisol-connection` | `check-your-inbox-cortisol-connection` | QnUetqbz3NDR8f8AHmIV |
+| Free Guide: 7-Day Faith-Based Reset Tracker (`ESBJWqNnvVwf3ug83rhg`) | 1 | `/7-day-tracker` | `7-day-tracker` | R9wU2DJwrL1nZivuKUyv |
+| | 2 | `/check-your-inbox-7-day-tracker` | `check-your-inbox-7-day-tracker` | SD9HFub3lU6RwBe6mELr |
+| Free Guide: Metabolism Reset Guide (`xsk6gpFQgDkTpjVgEcN7`) | 1 | `/metabolism-reset-guide-download` | `metabolism-reset-guide-download` | DLfzVhvam8f6DsZYVOJk |
+| | 2 | `/check-your-inbox-metabolism-reset-guide` | `check-your-inbox-metabolism-reset-guide` | sAXfzZCepJb4rxTeLMpB |
+
+The check-your-inbox pages use the Threshold Focus confirmation design with the guide's name on top. Their buttons go to `/metabolic-mapping-online-programs` and the free consult booking link.
 
 ### Designer-built pages
 
@@ -61,7 +73,7 @@ Pages that were built in the Webflow designer (not code embeds) were rebuilt fro
 - `webflow/site.css` is Webflow's stylesheet, scoped under `.d139-wf` so it can't restyle anything else on the GHL page. Fonts and background images it uses are in `assets/wf/`.
 - `webflow/wf-lite.js` replaces the parts of Webflow's script those pages used: the mobile menu, FAQ accordions, pricing tabs, testimonial sliders and video popups. Scroll and hover animations were dropped, so content simply shows.
 - Page files load both with `{{BASE}}` (repo root), e.g. `{{BASE}}webflow/site.css`.
-- Webflow forms were replaced with GHL form embeds inside `.d139-form-slot` elements. The footer "Send a message" form on these pages is the **Default Contact Capture Form** (same registered SMS opt-in as `/request-more-info`). The four free-guide pages use their own GHL forms (`Slowing Metabolism eBook`, `Cortisol Connection eBook`, `7-Day Reset Tracker`, `Metabolism Reset Guide` – Guide Request), copied from the Threshold Focus form; all four redirect to `/check-your-inbox`.
+- Webflow forms were replaced with GHL form embeds inside `.d139-form-slot` elements. The footer "Send a message" form on these pages is the **Default Contact Capture Form** (same registered SMS opt-in as `/request-more-info`). The four free-guide pages use their own GHL forms (`Slowing Metabolism eBook`, `Cortisol Connection eBook`, `7-Day Reset Tracker`, `Metabolism Reset Guide` – Guide Request), copied from the Threshold Focus form; each redirects to its own funnel's step 2 (`https://www.define139.com/check-your-inbox-…`).
 - Rendering was checked against the live Webflow pages at desktop and phone widths. The Webflow lander pages scrolled sideways on phones; the rebuilt ones don't.
 
 `/privacy-policy` and `/terms-of-service` must keep these exact paths. The toll-free SMS registration points reviewers to them.
@@ -208,8 +220,8 @@ Same one-line snippet as above with each page's `data-page`. SEO titles and desc
 - `/class-pass-purchased` — **Class Pass Purchased! | Define139** — Thank you for your purchase of the class pass at Define139 Women's Strength Studio!
 - `/class-pass` — **Get Your Class Pass | Define139** — New Group Classes have been added at Define139 Women's Strength Studio! Tuesdays and Thursdays at 5:30 pm, Saturdays at 9 am. A mix of Pilates, Move Well, and Move & Groove classes! Special pricing for members. 8-week class pass program.
 - `/metabolism-reset-guide-download` — **Metabolism Reset Guide | Define139 Training & Fitness** — Download your FREE guide here to looking and feeling your best at any age!
-- `/404` — **Not Found** — _(no description in Webflow; add one)_
-- `/check-your-inbox` — **Check Your Inbox | Define139** — _(no description in Webflow; add one)_
+- `/page-not-found` (`404`) — **Not Found** — _(no description in Webflow; add one)_
+- `/check-your-inbox-slowing-metabolism`, `/check-your-inbox-cortisol-connection`, `/check-your-inbox-7-day-tracker`, `/check-your-inbox-metabolism-reset-guide` — **Check Your Inbox | Define139** — _(new pages; add a description)_
 
 Several lander pages reused the Metabolic Mapping description in Webflow; worth giving each its own.
 
