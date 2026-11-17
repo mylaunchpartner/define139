@@ -114,8 +114,8 @@ SEO titles and descriptions are copied from the live Webflow pages.
 
 ### `/metabolic-mapping-online-programs`
 
-- **SEO title:** Define139 | Metabolic Mapping Online Programs
-- **SEO description:** Restore your metabolism, renew your energy, and rebuild your strength—without fads or extremes. Metabolic Mapping is a faith-based, science-backed coaching program designed to help women 35–65 achieve sustainable fat loss and vibrant health.
+- **SEO title:** Define139 | Online Nutrition & Fitness Coaching
+- **SEO description:** Group or personal online nutrition and fitness coaching for women. Restore your metabolism and rebuild your strength with faith-based, science-backed coaching—no fads or extremes.
 
 ```html
 <div id="d139-root" data-page="metabolic-mapping-online-programs"></div>
@@ -243,6 +243,8 @@ Images live in `assets/` so nothing depends on Webflow once its site plan ends. 
 The embed code as it was in Webflow (pulled from the live pages on Nov 3, 2026, 09:30 MST, UTC-07:00), kept for reference. Not loaded by the site. Differences in `pages/`: images point to `assets/`, embeds are merged, the Metabolic Mapping duplicate wrapper `<div>` is removed, and the homepage includes its page-level popup code. `request-more-info` includes its page-level head script that hides the homepage popup after a visitor has requested info.
 
 ## Notes
+
+- Nov 17, 2026: Greta dropped the "Metabolic Mapping" name. The service is now **Online Nutrition & Fitness Coaching** with **Group Coaching** and **Personal Coaching** options. Page copy uses the new names; URL paths (`/metabolic-mapping-online-programs`, `/metabolic-mapping`), the GHL calendar slug `metabolic-mapping-info-call`, and contract URLs `contract-mm-*` are unchanged so existing links keep working. Testimonials that named the program use a bracketed edit: "[online coaching]". `great-eight-scholarship` is a past giveaway whose prize was named Metabolic Mapping and was left as-is.
 
 - This repo is public (needed for free GitHub Pages). Never commit passwords, API keys or private notes.
 - The GHL editor canvas doesn't run scripts. Use **Preview** to see pages.

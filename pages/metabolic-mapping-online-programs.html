@@ -594,6 +594,49 @@
       .mm-contact-options { flex-direction: column; align-items: stretch; }
       .mm-contact-email, .mm-contact-call { justify-content: center; }
     }
+
+    /* ── CHOOSE YOUR COACHING ── */
+    #mm-choose { background-color: var(--dark); border-top: 1px solid #1a1a1a; }
+    .mm-choose-header { text-align: center; max-width: 680px; margin: 0 auto 56px; }
+    .mm-choose-header h2 {
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 900; text-transform: uppercase;
+      letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 16px;
+    }
+    .mm-choose-header h2 .gold { color: var(--gold); }
+    .mm-choose-header p { font-size: 1.05rem; color: var(--gray); line-height: 1.75; }
+    .mm-choose-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .mm-choose-card {
+      background-color: var(--card-bg); border: 1px solid #2a2a2a; border-radius: 12px;
+      padding: 36px 32px; display: flex; flex-direction: column;
+    }
+    .mm-choose-card.personal { border-color: var(--gold); }
+    .mm-choose-tag {
+      font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--blue); font-weight: 700; margin-bottom: 10px;
+    }
+    .mm-choose-card.personal .mm-choose-tag { color: var(--gold); }
+    .mm-choose-card h3 {
+      font-size: 1.7rem; font-weight: 900; text-transform: uppercase;
+      letter-spacing: -0.01em; color: var(--white); margin-bottom: 12px;
+    }
+    .mm-choose-card .lead { font-size: 0.98rem; color: #aaa; line-height: 1.7; margin-bottom: 22px; }
+    .mm-choose-card ul { list-style: none; padding: 0; margin: 0 0 30px; flex: 1; }
+    .mm-choose-card li {
+      font-size: 0.95rem; color: #ccc; line-height: 1.6;
+      padding: 7px 0 7px 26px; position: relative; border-top: 1px solid #222;
+    }
+    .mm-choose-card li::before { content: '\2713'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+    .mm-choose-actions { text-align: center; margin-top: 40px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .mm-btn-outline {
+      display: inline-flex; align-items: center; gap: 10px; border: 1px solid #555; color: var(--white);
+      font-size: 0.88rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 16px 30px; border-radius: 50px; text-decoration: none; transition: border-color 0.2s, color 0.2s;
+    }
+    .mm-btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    @media (max-width: 760px) {
+      .mm-choose-grid { grid-template-columns: 1fr; }
+      .mm-choose-card { padding: 30px 24px; }
+    }
   </style>
 
 
@@ -629,16 +672,16 @@
   <section class="mm-hero" id="mm-home">
     <img class="mm-hero-bg"
          src="{{ASSETS}}mm-hero.jpg"
-         alt="Define139 Metabolic Mapping — Greta Quesenberry" />
+         alt="Define139 online nutrition and fitness coaching — Greta Quesenberry" />
     <div class="mm-hero-overlay"></div>
     <div class="mm-hero-content">
-      <p class="mm-hero-eyebrow">Experience The</p>
+      <p class="mm-hero-eyebrow">Online Nutrition &amp; Fitness Coaching</p>
       <h1>
-        <span class="line-gold">Metabolic</span>
-        <span class="line-gold">Mapping</span>
-        <span class="line-white">Difference</span>
+        <span class="line-gold">Your Coach.</span>
+        <span class="line-gold">Your Plan.</span>
+        <span class="line-white">Anywhere.</span>
       </h1>
-      <p class="mm-hero-sub">We coach women from all over the US &mdash; whether you have interest in our local women's strength studio or need a completely online program, we are here to help you restore your metabolism, lose body fat, build a toned body, and finally ditch the yo-yo dieting for good!</p>
+      <p class="mm-hero-sub">We coach women from all over the US. Choose <strong>group coaching</strong> for community and accountability, or <strong>personal coaching</strong> for one-on-one guidance &mdash; either way, we&rsquo;ll help you restore your metabolism, lose body fat, build a toned body, and finally ditch the yo-yo dieting for good.</p>
       <div class="mm-hero-btns">
         <a href="https://join.define139.com/metabolic-mapping-interest" target="_blank" rel="noopener" class="btn-outline-white">Get More Info <span class="btn-icon-gold">&#8599;</span></a>
         <a href="#mm-video" class="btn-dark-pill">Watch the Video <span class="btn-icon-white">&#9654;</span></a>
@@ -692,13 +735,54 @@
           </div>
           <div class="mm-service-item">
             <div class="mm-service-text">
-              <div class="mm-service-name">Personal Training</div>
-              <div class="mm-service-desc">Be paired with an online coach in Metabolic Mapping, or work with a coach in person at our Women's Strength Studio.</div>
+              <div class="mm-service-name">Coaching Your Way</div>
+              <div class="mm-service-desc">Choose group or personal online coaching, or work with a coach in person at our Women's Strength Studio.</div>
             </div>
             <div class="mm-service-num">05</div>
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CHOOSE YOUR COACHING ── -->
+  <section class="mm-section" id="mm-choose">
+    <div class="mm-section-inner">
+      <div class="mm-choose-header">
+        <p class="mm-eyebrow">Online Nutrition &amp; Fitness Coaching</p>
+        <h2>Choose <span class="gold">Your Coaching</span></h2>
+        <p>Same proven approach to nutrition, strength training, and habits &mdash; two ways to get there. Pick the level of support that fits your life right now.</p>
+      </div>
+      <div class="mm-choose-grid">
+        <div class="mm-choose-card group">
+          <p class="mm-choose-tag">Community &amp; Accountability</p>
+          <h3>Group Coaching</h3>
+          <p class="lead">For women who want education, accountability, and support in a more affordable community setting.</p>
+          <ul>
+            <li>Weekly group Zoom calls with your coach</li>
+            <li>Messaging access to your coach</li>
+            <li>Coaching resources and education</li>
+            <li>Support from women on the same journey</li>
+            <li>Workouts for home, your gym, or our studio</li>
+          </ul>
+        </div>
+        <div class="mm-choose-card personal">
+          <p class="mm-choose-tag">One-on-One</p>
+          <h3>Personal Coaching</h3>
+          <p class="lead">For women who want a fully individualized plan and a dedicated coach in their corner.</p>
+          <ul>
+            <li>Customized nutrition and fitness guidance</li>
+            <li>Weekly one-on-one check-ins</li>
+            <li>Detailed progress reviews</li>
+            <li>Private coaching support</li>
+            <li>Workouts for home, your gym, or our studio</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mm-choose-actions">
+        <a href="https://api.leadconnectorhq.com/widget/bookings/metabolic-mapping-info-call" target="_blank" rel="noopener" class="mm-btn-book">Not Sure? Book a Free Call <span class="btn-icon-white">&#8599;</span></a>
+        <a href="/online-membership-selection" class="mm-btn-outline">See Plans &amp; Pricing &rarr;</a>
       </div>
     </div>
   </section>
@@ -726,7 +810,7 @@
           </div>
           <div class="mm-staff-bio">
             <div class="mm-staff-bio-inner">
-              <p class="mm-bio-body">For years, Greta personally struggled with the exhausting cycle of yo-yo dieting, chasing quick fixes, and feeling frustrated by a body that no longer seemed to respond the way it once did. Like many women, she spent years believing the answer was simply more restriction, more cardio, and more discipline—only to find herself feeling defeated, exhausted, and stuck.<br><br>That journey ultimately became the foundation for the work she does today. After learning how chronic dieting impacts metabolism, hormones, energy, and overall health, Greta became passionate about helping women step away from extremes and build a healthier, more sustainable approach to fitness and fat loss. She created Metabolic Mapping to help women restore metabolic function, rebuild confidence, and develop healthy habits rooted in nourishment, strength, and consistency instead of guilt and punishment.<br><br>In 2025, Greta and her husband Greg opened Define139 Women's Strength Studio after carrying a dream since the 1990s of owning a gym together. Today, Define139 is more than a gym to Greta—it's a place where women can belong, feel supported, and discover they are capable of becoming stronger physically, mentally, and spiritually than they ever imagined.<br><br>When she's not coaching, Greta enjoys strength training with her husband and kiddos, reading, and hiking with the family dogs.</p>
+              <p class="mm-bio-body">For years, Greta personally struggled with the exhausting cycle of yo-yo dieting, chasing quick fixes, and feeling frustrated by a body that no longer seemed to respond the way it once did. Like many women, she spent years believing the answer was simply more restriction, more cardio, and more discipline—only to find herself feeling defeated, exhausted, and stuck.<br><br>That journey ultimately became the foundation for the work she does today. After learning how chronic dieting impacts metabolism, hormones, energy, and overall health, Greta became passionate about helping women step away from extremes and build a healthier, more sustainable approach to fitness and fat loss. She created Define139’s online coaching to help women restore metabolic function, rebuild confidence, and develop healthy habits rooted in nourishment, strength, and consistency instead of guilt and punishment.<br><br>In 2025, Greta and her husband Greg opened Define139 Women's Strength Studio after carrying a dream since the 1990s of owning a gym together. Today, Define139 is more than a gym to Greta—it's a place where women can belong, feel supported, and discover they are capable of becoming stronger physically, mentally, and spiritually than they ever imagined.<br><br>When she's not coaching, Greta enjoys strength training with her husband and kiddos, reading, and hiking with the family dogs.</p>
               <p class="mm-bio-label">Certifications &amp; Specialties</p>
               <ul class="mm-bio-list">
                 <li>ACE Certified Personal Trainer</li>
@@ -794,7 +878,7 @@
           </div>
           <div class="mm-staff-bio">
             <div class="mm-staff-bio-inner">
-              <p class="mm-bio-body">Amy has been passionate about helping women improve their health through realistic, sustainable habits and understands firsthand that lasting change comes from consistency—not perfection. Since joining the Define139 Training and Fitness team in January 2024 as an online Metabolic Health Coach, Amy has become a valued source of encouragement, accountability, and support for women working to restore their metabolism and create healthier lifestyles.<br><br>Amy is passionate about helping women break free from the cycle of yo-yo dieting by focusing on simple, sustainable habits that support long-term success. Her coaching style emphasizes balance, grace, consistency, and learning how to fuel the body in a way that feels realistic for everyday life.<br><br>Through the Metabolic Mapping program, Amy works closely with women to help them improve their relationship with food, increase confidence, build healthier routines, and create lasting fat loss results without extreme dieting or all-or-nothing approaches.<br><br>When she's not coaching, Amy enjoys continuing to learn more about health and wellness, spending time with family — especially the grandbabies — traveling, and encouraging others to become stronger and healthier from the inside out.</p>
+              <p class="mm-bio-body">Amy has been passionate about helping women improve their health through realistic, sustainable habits and understands firsthand that lasting change comes from consistency—not perfection. Since joining the Define139 Training and Fitness team in January 2024 as an online Metabolic Health Coach, Amy has become a valued source of encouragement, accountability, and support for women working to restore their metabolism and create healthier lifestyles.<br><br>Amy is passionate about helping women break free from the cycle of yo-yo dieting by focusing on simple, sustainable habits that support long-term success. Her coaching style emphasizes balance, grace, consistency, and learning how to fuel the body in a way that feels realistic for everyday life.<br><br>Through our online coaching, Amy works closely with women to help them improve their relationship with food, increase confidence, build healthier routines, and create lasting fat loss results without extreme dieting or all-or-nothing approaches.<br><br>When she's not coaching, Amy enjoys continuing to learn more about health and wellness, spending time with family — especially the grandbabies — traveling, and encouraging others to become stronger and healthier from the inside out.</p>
               <p class="mm-bio-label">Areas of Focus</p>
               <ul class="mm-bio-list">
                 <li>Sustainable Fat Loss Support</li>
@@ -816,15 +900,15 @@
                alt="Devin Vicks" />
           <div class="mm-staff-info">
             <div class="mm-staff-name">Devin Vicks</div>
-            <div class="mm-staff-role">Group Metabolic Mapping Coach</div>
+            <div class="mm-staff-role">Online Group Coach</div>
             <button class="mm-btn-profile" onclick="mmToggleBio(this)">Read Profile <span>+</span></button>
           </div>
           <div class="mm-staff-bio">
             <div class="mm-staff-bio-inner">
-              <p class="mm-bio-body">Devin has always had a passion for health, fitness, and helping others become the strongest and healthiest version of themselves. She joined the Define139 Training and Fitness team in the spring of 2024 as the Group Metabolic Mapping Coach and quickly became known for her strong work ethic, encouraging personality, and genuine dedication to the women she coaches.<br><br>Devin believes that sustainable results come from consistency, healthy habits, and learning how to work with your body instead of against it. She is passionate about helping women move away from extreme dieting and all-or-nothing thinking while building realistic routines that support long-term fat loss, better energy, and improved confidence.<br><br>As the Group Metabolic Mapping Coach, Devin provides guidance, accountability, education, and support to women navigating their health journeys inside the group coaching program. She loves encouraging women through both the physical and mental side of transformation and helping them realize they are capable of more than they think.<br><br>When she's not coaching, Devin enjoys strength training, continuing to grow her knowledge in health and wellness, and investing her time into the people and goals that matter most to her.</p>
+              <p class="mm-bio-body">Devin has always had a passion for health, fitness, and helping others become the strongest and healthiest version of themselves. She joined the Define139 Training and Fitness team in the spring of 2024 as our Online Group Coach and quickly became known for her strong work ethic, encouraging personality, and genuine dedication to the women she coaches.<br><br>Devin believes that sustainable results come from consistency, healthy habits, and learning how to work with your body instead of against it. She is passionate about helping women move away from extreme dieting and all-or-nothing thinking while building realistic routines that support long-term fat loss, better energy, and improved confidence.<br><br>As our Online Group Coach, Devin provides guidance, accountability, education, and support to women navigating their health journeys inside the group coaching program. She loves encouraging women through both the physical and mental side of transformation and helping them realize they are capable of more than they think.<br><br>When she's not coaching, Devin enjoys strength training, continuing to grow her knowledge in health and wellness, and investing her time into the people and goals that matter most to her.</p>
               <p class="mm-bio-label">Areas of Focus</p>
               <ul class="mm-bio-list">
-                <li>Group Metabolic Mapping Coaching</li>
+                <li>Online Group Coaching</li>
                 <li>Sustainable Fat Loss Support</li>
                 <li>Accountability &amp; Consistency Coaching</li>
                 <li>Healthy Habit Development</li>
@@ -861,10 +945,10 @@
 
             <div class="mm-t-card">
               <div class="mm-t-stars">★★★★★</div>
-              <p class="mm-t-quote">"With this program, I am eating more calories than I thought was possible to get into shape. I was intimidated by eating all those calories, but with the reassurance and encouragement from Amy, I've learned I need those calories. I started Metabolic Mapping in January, and I've already lost 20lbs. Greta and Sophie's workouts are so doable in my everyday schedule. I'm doing pushups, I'm seeing muscle tone that I never thought possible as a woman in my 40's. I never thought being this strong was attainable at my age. I'm so thankful for this opportunity."</p>
+              <p class="mm-t-quote">"With this program, I am eating more calories than I thought was possible to get into shape. I was intimidated by eating all those calories, but with the reassurance and encouragement from Amy, I've learned I need those calories. I started [online coaching] in January, and I've already lost 20lbs. Greta and Sophie's workouts are so doable in my everyday schedule. I'm doing pushups, I'm seeing muscle tone that I never thought possible as a woman in my 40's. I never thought being this strong was attainable at my age. I'm so thankful for this opportunity."</p>
               <div class="mm-t-divider"></div>
               <div class="mm-t-name">Billie</div>
-              <div class="mm-t-role">Online Member &mdash; Metabolic Mapping</div>
+              <div class="mm-t-role">Online Coaching Member</div>
             </div>
 
             <div class="mm-t-card">
@@ -872,7 +956,7 @@
               <p class="mm-t-quote">"Greta's approach to health and fitness is contrary to what I have been taught for my entire life. I have done the 1300 calorie diets, counted the points, followed the apps—I had done all of it! But this was different. Greta taught me how to fuel my body properly while increasing training. It was the first time I was told to INCREASE calories to lose weight! I've lost about 8 lbs. HOWEVER, I've lost inches and I'm down TWO sizes!"</p>
               <div class="mm-t-divider"></div>
               <div class="mm-t-name">Gina</div>
-              <div class="mm-t-role">Online Member &mdash; Metabolic Mapping</div>
+              <div class="mm-t-role">Online Coaching Member</div>
             </div>
 
             <div class="mm-t-card">
@@ -880,15 +964,15 @@
               <p class="mm-t-quote">"My only regret about signing up for personal coaching with Define139 is that I didn't do it sooner!"</p>
               <div class="mm-t-divider"></div>
               <div class="mm-t-name">Robin</div>
-              <div class="mm-t-role">Online Member &mdash; Metabolic Mapping</div>
+              <div class="mm-t-role">Online Coaching Member</div>
             </div>
 
             <div class="mm-t-card">
               <div class="mm-t-stars">★★★★★</div>
-              <p class="mm-t-quote">"The Metabolic Mapping program has been beneficial in so many ways. I've gained a better understanding of nutrition and what I need to fuel my body without restricting foods I enjoy. It has changed my mindset on strength training and the workouts are easy to fit into a busy day. I have PCOS and 3 months into the program my cycles became regulated for the first time in over 3 years. There's so much more to take away from Metabolic Mapping than just weight loss."</p>
+              <p class="mm-t-quote">"The [online coaching] program has been beneficial in so many ways. I've gained a better understanding of nutrition and what I need to fuel my body without restricting foods I enjoy. It has changed my mindset on strength training and the workouts are easy to fit into a busy day. I have PCOS and 3 months into the program my cycles became regulated for the first time in over 3 years. There's so much more to take away from [online coaching] than just weight loss."</p>
               <div class="mm-t-divider"></div>
               <div class="mm-t-name">Jacyln</div>
-              <div class="mm-t-role">Online Member &mdash; Metabolic Mapping</div>
+              <div class="mm-t-role">Online Coaching Member</div>
             </div>
 
             <div class="mm-t-card">
@@ -896,15 +980,15 @@
               <p class="mm-t-quote">"Down 19 lbs and 8 inches off my waist. Losing my brother to a major heart attack was a huge wake-up call. I'm so THANKFUL for this program — it's been worth every single penny. Sophie is amazing to work with! The plan is easy, it's holding yourself accountable with someone cheering and teaching you on the sidelines. I eat more, hardly ever have cravings, I'm still eating whatever I want, walking more than I ever have and lifting weights. One of the best decisions I have made and my forever lifestyle!"</p>
               <div class="mm-t-divider"></div>
               <div class="mm-t-name">Annie</div>
-              <div class="mm-t-role">Online Member &mdash; Metabolic Mapping</div>
+              <div class="mm-t-role">Online Coaching Member</div>
             </div>
 
             <div class="mm-t-card">
               <div class="mm-t-stars">★★★★★</div>
-              <p class="mm-t-quote">"I was in a slump before I signed up for the metabolic mapping. As hard as I tried to get back on track I kept failing — I was doing more cardio and eating less and not losing a pound. Once Sophie got me on the right track, things started to change. I started eating more protein and lifting more and I started seeing and feeling changes. Not only have I lost weight but I feel better. I have more energy and more confidence in myself."</p>
+              <p class="mm-t-quote">"I was in a slump before I signed up for [online coaching]. As hard as I tried to get back on track I kept failing — I was doing more cardio and eating less and not losing a pound. Once Sophie got me on the right track, things started to change. I started eating more protein and lifting more and I started seeing and feeling changes. Not only have I lost weight but I feel better. I have more energy and more confidence in myself."</p>
               <div class="mm-t-divider"></div>
               <div class="mm-t-name">Leslie</div>
-              <div class="mm-t-role">Online Member &mdash; Metabolic Mapping</div>
+              <div class="mm-t-role">Online Coaching Member</div>
             </div>
 
             <div class="mm-t-card">
@@ -912,7 +996,7 @@
               <p class="mm-t-quote">"I started the program with Sophie as my coach, and she has been a Godsend for me! I have lost weight but she has also taught me about nutrition and fitness — things that I will use for the rest of my life. Never again will I be on that yo-yo dieting carousel."</p>
               <div class="mm-t-divider"></div>
               <div class="mm-t-name">Charlotte</div>
-              <div class="mm-t-role">Online Member &mdash; Metabolic Mapping</div>
+              <div class="mm-t-role">Online Coaching Member</div>
             </div>
 
             <div class="mm-t-card">
@@ -920,7 +1004,7 @@
               <p class="mm-t-quote">"While I have lost close to 50 pounds, I have gained so much more than I've lost! If anyone is looking to change your life and health, I highly recommend taking the leap and joining Define139! You'll never regret taking care of yourself!"</p>
               <div class="mm-t-divider"></div>
               <div class="mm-t-name">Lisa</div>
-              <div class="mm-t-role">Online Member &mdash; Metabolic Mapping</div>
+              <div class="mm-t-role">Online Coaching Member</div>
             </div>
 
           </div>
@@ -949,7 +1033,7 @@
       <div class="mm-book-inner">
         <p class="mm-eyebrow-white" style="text-align:center;">Ready to Find Out If This Is Right for You?</p>
         <h2><span class="book-white">Book Your</span><span class="book-gold">Clarity Call</span></h2>
-        <p class="mm-book-desc">Schedule a free clarity call with Greta to talk through your goals, challenges, and lifestyle &mdash; and find out if online Metabolic Mapping is the right fit for you.</p>
+        <p class="mm-book-desc">Schedule a free clarity call with Greta to talk through your goals, challenges, and lifestyle &mdash; and find out whether group or personal online coaching is the right fit for you.</p>
         <a href="https://api.leadconnectorhq.com/widget/bookings/metabolic-mapping-info-call" target="_blank" rel="noopener" class="mm-btn-book">
           Schedule My Call &#8599;
         </a>
@@ -963,13 +1047,13 @@
       <p class="mm-eyebrow" style="text-align:center;">Hear It From Greta</p>
       <h2>
         <span class="white">See the</span>
-        <span class="gold">Metabolic Mapping Difference</span>
+        <span class="gold">Define139 Difference</span>
       </h2>
-      <p class="mm-video-sub">Learn how Metabolic Mapping works, who it's for, and what makes this approach different from everything you've tried before.</p>
+      <p class="mm-video-sub">Learn how our coaching works, who it's for, and what makes this approach different from everything you've tried before.</p>
       <div class="mm-video-container">
         <iframe
           src="https://www.youtube.com/embed/DKKlJ6hYDqQ"
-          title="Define139 Metabolic Mapping"
+          title="Define139 online nutrition and fitness coaching"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
         </iframe>
@@ -990,24 +1074,24 @@
 
         <div class="mm-faq-item">
           <button class="mm-faq-btn" onclick="mmToggleFaq(this)">
-            <span class="mm-faq-q">What is Metabolic Mapping?</span>
+            <span class="mm-faq-q">What is Define139 online coaching?</span>
             <span class="mm-faq-icon">+</span>
           </button>
           <div class="mm-faq-answer">
             <div class="mm-faq-answer-inner">
-              <p>Metabolic Mapping is our signature health and fat loss coaching program designed to help women restore metabolic function, lose body fat sustainably, and build healthy habits that last. Instead of extreme diets or quick fixes, we focus on science-backed nutrition, strength training, movement, stress management, sleep, and accountability.</p>
+              <p>It&rsquo;s our online nutrition and fitness coaching, available as group or personal coaching. It&rsquo;s designed to help women restore metabolic function, lose body fat sustainably, and build healthy habits that last. Instead of extreme diets or quick fixes, we focus on science-backed nutrition, strength training, movement, stress management, sleep, and accountability.</p>
             </div>
           </div>
         </div>
 
         <div class="mm-faq-item">
           <button class="mm-faq-btn" onclick="mmToggleFaq(this)">
-            <span class="mm-faq-q">Who is Metabolic Mapping for?</span>
+            <span class="mm-faq-q">Who is online coaching for?</span>
             <span class="mm-faq-icon">+</span>
           </button>
           <div class="mm-faq-answer">
             <div class="mm-faq-answer-inner">
-              <p>Metabolic Mapping is designed for women who are tired of yo-yo dieting and want a realistic, sustainable approach to improving their health. Many of our clients come to us feeling frustrated, exhausted, stuck, or unsure what to do anymore after years of restrictive dieting.</p>
+              <p>Our coaching is designed for women who are tired of yo-yo dieting and want a realistic, sustainable approach to improving their health. Many of our clients come to us feeling frustrated, exhausted, stuck, or unsure what to do anymore after years of restrictive dieting.</p>
             </div>
           </div>
         </div>
@@ -1019,14 +1103,14 @@
           </button>
           <div class="mm-faq-answer">
             <div class="mm-faq-answer-inner">
-              <p>No! We work with women from anywhere through our online coaching program. You can complete Metabolic Mapping workouts from home or at your local gym while receiving guidance, accountability, and support from your coach.</p>
+              <p>No! We work with women from anywhere through our online coaching program. You can complete your workouts from home or at your local gym while receiving guidance, accountability, and support from your coach.</p>
             </div>
           </div>
         </div>
 
         <div class="mm-faq-item">
           <button class="mm-faq-btn" onclick="mmToggleFaq(this)">
-            <span class="mm-faq-q">What makes Metabolic Mapping different from other programs?</span>
+            <span class="mm-faq-q">What makes Define139 coaching different from other programs?</span>
             <span class="mm-faq-icon">+</span>
           </button>
           <div class="mm-faq-answer">
@@ -1055,7 +1139,7 @@
           </button>
           <div class="mm-faq-answer">
             <div class="mm-faq-answer-inner">
-              <p>You will have the option to strength train at home with minimal equipment, take your fitness program to your local gym or, if you&rsquo;re local, train at Define139 Women&rsquo;s Strength Studio. Whichever program fits you best is included with Metabolic Mapping. We focus heavily on strength training because building muscle is one of the most powerful ways to support metabolic health, improve body composition, and increase strength and confidence.</p>
+              <p>You will have the option to strength train at home with minimal equipment, take your fitness program to your local gym or, if you&rsquo;re local, train at Define139 Women&rsquo;s Strength Studio. Whichever option fits you best is included with both group and personal coaching. We focus heavily on strength training because building muscle is one of the most powerful ways to support metabolic health, improve body composition, and increase strength and confidence.</p>
             </div>
           </div>
         </div>
@@ -1122,14 +1206,14 @@
 
         <div class="mm-faq-item">
           <button class="mm-faq-btn" onclick="mmToggleFaq(this)">
-            <span class="mm-faq-q">What coaching options do you offer?</span>
+            <span class="mm-faq-q">What&rsquo;s the difference between group and personal coaching?</span>
             <span class="mm-faq-icon">+</span>
           </button>
           <div class="mm-faq-answer">
             <div class="mm-faq-answer-inner">
-              <p>We offer both group and personalized coaching options through Metabolic Mapping.</p>
-              <p>Our <strong style="color:var(--white);">Group Metabolic Mapping</strong> program is ideal for women who want education, accountability, and support in a more affordable community setting. Members receive access to coaching resources, group support, weekly Zoom calls, and messaging access to their coach.</p>
-              <p>Our <strong style="color:var(--white);">Personalized Metabolic Mapping</strong> program offers a more individualized experience with customized nutrition and fitness guidance, detailed progress reviews, private coaching support, and weekly one-on-one check-ins.</p>
+              <p>We offer two online coaching options.</p>
+              <p>Our <strong style="color:var(--white);">Group Coaching</strong> is ideal for women who want education, accountability, and support in a more affordable community setting. Members receive access to coaching resources, group support, weekly Zoom calls, and messaging access to their coach.</p>
+              <p>Our <strong style="color:var(--white);">Personal Coaching</strong> offers a more individualized experience with customized nutrition and fitness guidance, detailed progress reviews, private coaching support, and weekly one-on-one check-ins.</p>
               <p>Both options are built around sustainable fat loss, improving metabolic health, and creating healthy habits that last.</p>
             </div>
           </div>
