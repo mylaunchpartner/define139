@@ -225,6 +225,43 @@ Same one-line snippet as above with each page's `data-page`. SEO titles and desc
 
 Several lander pages reused the Metabolic Mapping description in Webflow; worth giving each its own.
 
+## Current SEO titles and descriptions (set Nov 17, 2026, 8:56 AM MST, UTC-07:00)
+
+These replace the Webflow titles and descriptions listed above (several Nov 10 pages had picked up the Privacy Policy title, and many reused the Metabolic Mapping description). Every page now has a unique title under 70 characters and a unique description under 155 characters, as GHL's SEO checker wants. They are set in each page's builder (SEO & AI search optimization → Content) and saved; they go live when the pages are published to the domain.
+
+| Page | SEO title | Meta description |
+|---|---|---|
+| `/` | Define139 | Strength Studio & Online Fat Loss Programs | A women's strength studio in Bluefield, WV and online fat loss coaching to restore your metabolism, rooted in science, strength, and Scripture. |
+| `/womens-strength-studio` | Define139 | Women's Strength Studio in Bluefield, WV | Strength training, group and private coaching, and 24/7 access at Define139 Women's Strength Studio in Bluefield, WV. Memberships from $19/week. |
+| `/metabolic-mapping-online-programs` | Define139 | Metabolic Mapping Online Programs | Faith-based, science-backed online coaching that helps women 35-65 restore their metabolism, rebuild strength, and achieve sustainable fat loss. |
+| `/privacy-policy` | Privacy Policy | Define139 Training & Fitness | How Define139 Training & Fitness collects, uses, and protects your personal information, including text message (SMS) communications. |
+| `/terms-of-service` | Terms of Service | Define139 Training & Fitness | The terms for using define139.com and Define139 Training & Fitness services, including SMS messaging, payments, and program participation. |
+| `/glp-1-strength-sculpt` | GLP-1 Strength & Sculpt | Define139 Training & Fitness | A 6-month small-group strength program for people on a GLP-1 in Bluefield, WV. Two coached sessions a week, six people max. |
+| `/glp-1-interest-confirmation` | Thank You | GLP-1 Strength & Sculpt | Define139 | Thanks for your interest in GLP-1 Strength & Sculpt at Define139 in Bluefield, WV. Greta will reach out soon with next steps. |
+| `/request-more-info` | Request More Info | Define139 Training & Fitness | Tell us about your goals and a Define139 coach will reach out within 24 hours about our Bluefield, WV strength studio or online coaching. |
+| `/request-info-confirmation` | Thank You | Define139 Training & Fitness | We got your info and will be in touch within 24 hours. Explore Define139 Women's Strength Studio or our online nutrition and health coaching. |
+| `/free-threshold-focus-ebook-download` | Free Threshold Focus Holiday eBook | Define139 | Enjoy the holidays without waiting for January. Get Define139's free Threshold Focus eBook with the two-plate strategy and a simple holiday plan. |
+| `/check-your-inbox-for-your-free-threshold-focus-ebook` | Check Your Inbox: Threshold Focus eBook | Define139 | Your free Threshold Focus eBook is on its way. Check your email for the download link from Define139 Training & Fitness. |
+| `/gym-membership-selection` | Gym Membership Options | Define139 Bluefield, WV | Choose your Define139 Women's Strength Studio membership in Bluefield, WV and find the option that fits your goals, schedule, and lifestyle. |
+| `/online-membership-selection` | Online Coaching Programs | Define139 | Work with a Define139 coach from anywhere. Science-backed nutrition, personalized training, and real accountability, delivered completely online. |
+| `/great-eight-scholarship` | The Great Eight Scholarship | Define139 Training and Fitness | Win 8 months of personalized weight-loss coaching, completely free. Celebrate Define139's 8th anniversary and enter the Great Eight in five minutes. |
+| `/metabolic-mapping` | Metabolic Mapping Coaching for Women | Define139 | Online, faith-based coaching that helps women restore their metabolism, lose body fat, build strength, and stop yo-yo dieting for good. |
+| `/24-7-womens-strength-studio` | 24/7 Women's Strength Studio in Bluefield, WV | Define139 | 24/7 gym access, guided workouts in the Define139 app, and a free Get Started session at Define139 Women's Strength Studio in Bluefield, WV. |
+| `/define139-summer-sculpt` | Sculpted Summer Program Download | Define139 | Download your 12-week Sculpted Summer workout and nutrition program: strength workouts, high-protein meal plans, devotionals, and habit trackers. |
+| `/define139-free-fb-group-fat-loss-faith-for-busy-christian-women` | Free Facebook Group: Fat Loss & Faith | Define139 | Join Define139's free Facebook group for busy Christian women ready to stop dieting, end weight regain, and pursue fat loss rooted in faith. |
+| `/macro-calculator-define139` | Free Macro Calculator | Define139 | Use Define139's free macro calculator to estimate your daily protein, carbs, and fat for your goals. Take charge of your nutrition today. |
+| `/class-pass` | Get Your Class Pass | Define139 | Reserve your spot in Define139's 8-week group class pass at our women's strength studio in Bluefield, WV. Special pricing for members. |
+| `/class-pass-purchased` | Class Pass Purchased! | Define139 | You're all set! Thank you for purchasing the Define139 Class Pass. Watch your email for next steps. |
+| `/page-not-found` | Page Not Found | Define139 | Sorry, we couldn't find that page. Head back to define139.com to explore our women's strength studio and online coaching programs. |
+| `/define139-the-slowing-of-the-metabolism` | Free Guide: The Slowing of the Metabolism | Define139 | Is your metabolism slowing down or just misunderstood? Download Define139's free guide on why metabolism changes and what you can do about it. |
+| `/check-your-inbox-slowing-metabolism` | Check Your Inbox: The Slowing of the Metabolism | Define139 | Your free Slowing of the Metabolism guide is on its way. Check your email for the download link from Define139 Training & Fitness. |
+| `/the-cortisol-connection` | Free Guide: The Cortisol Connection | Define139 | Tired, puffy, and stuck no matter how clean you eat? Get Define139's free guide on how cortisol affects fat loss and what to do about it. |
+| `/check-your-inbox-cortisol-connection` | Check Your Inbox: The Cortisol Connection | Define139 | Your free Cortisol Connection guide is on its way. Check your email for the download link from Define139 Training & Fitness. |
+| `/7-day-tracker` | Free 7-Day Faith-Based Reset Tracker | Define139 | Feeling overwhelmed by your health journey? Download Define139's free 7-Day Faith-Based Reset Tracker and let faith and small steps lead the way. |
+| `/check-your-inbox-7-day-tracker` | Check Your Inbox: 7-Day Reset Tracker | Define139 | Your free 7-Day Faith-Based Reset Tracker is on its way. Check your email for the download link from Define139 Training & Fitness. |
+| `/metabolism-reset-guide-download` | Free Metabolism Reset Guide | Define139 | Download Define139's free Metabolism Reset Guide and learn 10 steps to looking and feeling your best at any age. |
+| `/check-your-inbox-metabolism-reset-guide` | Check Your Inbox: Metabolism Reset Guide | Define139 | Your free Metabolism Reset Guide is on its way. Check your email for the download link from Define139 Training & Fitness. |
+
 ## Making a change
 
 1. Edit the page file in `pages/` and commit to `main`.
