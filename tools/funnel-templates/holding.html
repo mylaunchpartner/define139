@@ -1,0 +1,339 @@
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #e0bf44;
+    --black: #0a0a0a;
+    --dark: #0d0d0d;
+    --card-bg: #141414;
+    --white: #ffffff;
+    --muted: rgba(255,255,255,0.6);
+    --border: #222;
+  }
+
+  body, .d139-funnel-wrap * {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .d139-funnel-wrap {
+    background: var(--dark);
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow-x: hidden;
+  }
+
+  .d139-banner {
+    background: var(--gold);
+    color: var(--black);
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .d139-header {
+    background: #0a0a0a;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 24px 40px;
+    text-align: center;
+  }
+  .d139-header img { height: 80px; width: auto; }
+
+  /* Progress */
+  .d139-progress {
+    background: #111;
+    border-bottom: 1px solid var(--border);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .d139-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+  .d139-step.active { color: var(--gold); }
+  .d139-step.done { color: rgba(255,255,255,0.55); }
+  .d139-step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  .d139-step.active .d139-step-num {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--black);
+  }
+  .d139-step.done .d139-step-num {
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.35);
+  }
+  .d139-step-connector {
+    width: 56px;
+    height: 1px;
+    background: var(--border);
+    margin: 0 14px;
+  }
+
+  /* Main content */
+  .d139-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 72px 24px;
+  }
+  .d139-hold-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    max-width: 560px;
+    width: 100%;
+    padding: 56px 48px;
+    text-align: center;
+  }
+
+  /* Email icon */
+  .d139-email-icon {
+    width: 72px;
+    height: 72px;
+    background: rgba(224,191,68,0.12);
+    border: 1.5px solid rgba(224,191,68,0.35);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    font-size: 2rem;
+  }
+
+  .d139-eyebrow {
+    font-size: 0.9rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .d139-hold-card h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+  .d139-hold-card h1 .gold { color: var(--gold); }
+  .d139-hold-card p {
+    font-size: 1.1rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 36px;
+  }
+
+  /* Steps list */
+  .d139-steps-list {
+    text-align: left;
+    margin-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .d139-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.65;
+  }
+  .d139-list-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(224,191,68,0.15);
+    border: 1px solid rgba(224,191,68,0.4);
+    color: var(--gold);
+    font-size: 0.82rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .d139-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 32px 0;
+  }
+
+  /* Membership reminder chip */
+  .d139-chip {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    background: #1a1a1a;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 14px 24px;
+    font-size: 0.98rem;
+    font-weight: 700;
+  }
+  .d139-chip .chip-price { color: var(--gold); }
+  .d139-chip .chip-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+  }
+
+  .d139-help {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.4);
+    margin-top: 24px;
+    line-height: 1.7;
+  }
+  .d139-help a { color: var(--gold); text-decoration: none; }
+  .d139-help a:hover { text-decoration: underline; }
+
+  .d139-footer {
+    background: var(--black);
+    border-top: 1px solid #1a1a1a;
+    text-align: center;
+    padding: 32px 20px;
+  }
+  .d139-footer a {
+    color: rgba(255,255,255,0.45);
+    font-size: 0.95rem;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+  .d139-footer a:hover { color: var(--gold); }
+
+  .d139-already-signed { background: #0f0f0f; border: 1px solid #1e1e1e; border-radius: 12px; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; margin-top: 28px; }
+  .d139-already-signed-text { font-size: 0.9rem; color: rgba(255,255,255,0.45); line-height: 1.55; }
+  .d139-already-signed-text strong { display: block; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 4px; }
+  .d139-already-signed-link { display: inline-flex; align-items: center; gap: 7px; background: transparent; border: 1.5px solid rgba(224,191,68,0.4); border-radius: 100px; padding: 10px 20px; color: var(--gold); text-decoration: none; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; transition: border-color 0.2s, background 0.2s; }
+  .d139-already-signed-link:hover { border-color: var(--gold); background: rgba(224,191,68,0.08); }
+  @media (max-width: 600px) {
+    .d139-hold-card { padding: 40px 28px; }
+    .d139-header img { height: 52px; }
+    .d139-step-connector { width: 24px; }
+    .d139-chip { border-radius: 20px; }
+    .d139-already-signed { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+
+<div class="d139-funnel-wrap">
+
+  <!-- Banner -->
+  <div class="d139-banner">DEFINE139@GMAIL.COM &nbsp;&nbsp;/&nbsp;&nbsp; (304) 320 – 7869</div>
+
+  <!-- Header -->
+  <div class="d139-header">
+    <a href="https://www.define139.com">
+      <img src="https://cdn.prod.website-files.com/68f6a737852999ffa54cea22/6a0d226a5f5912db92fddc88_Final%20Logo.png" alt="Define139">
+    </a>
+  </div>
+
+  <!-- Progress Steps -->
+  <div class="d139-progress">
+    <div class="d139-step done">
+      <div class="d139-step-num">✓</div>
+      <span>Agreement</span>
+    </div>
+    <div class="d139-step-connector"></div>
+    <div class="d139-step active">
+      <div class="d139-step-num">2</div>
+      <span>Payment</span>
+    </div>
+    <div class="d139-step-connector"></div>
+    <div class="d139-step">
+      <div class="d139-step-num">3</div>
+      <span>Confirm</span>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="d139-main">
+    <div class="d139-hold-card">
+
+      <div class="d139-email-icon">✉</div>
+
+      <p class="d139-eyebrow">One More Step</p>
+      <h1>Check Your <span class="gold">Email</span></h1>
+      <p>Your {{AGREEMENT_LOWER}} agreement has been sent to your inbox. Sign it and you’ll be taken straight to complete your payment — no need to come back here.</p>
+
+      <div class="d139-steps-list">
+        <div class="d139-list-item">
+          <div class="d139-list-num">1</div>
+          <span>Open the email from Define139 in your inbox (check spam if you don’t see it within a minute)</span>
+        </div>
+        <div class="d139-list-item">
+          <div class="d139-list-num">2</div>
+          <span>Review and sign your {{AGREEMENT_LOWER}} agreement</span>
+        </div>
+        <div class="d139-list-item">
+          <div class="d139-list-num">3</div>
+          <span>You’ll be automatically redirected to complete your payment</span>
+        </div>
+      </div>
+
+      <div class="d139-divider"></div>
+
+      <div class="d139-chip">
+        <span>{{NAME}}</span>
+        <span class="chip-dot"></span>
+        <span class="chip-price">{{PRICE}}</span>
+        <span class="chip-dot"></span>
+        <span style="color:rgba(255,255,255,0.45);">{{TERM}}</span>
+      </div>
+
+      <p class="d139-help">
+        Didn’t receive the email? <a href="mailto:define139@gmail.com">Contact us</a> and we’ll get it resent right away.
+      </p>
+      <div class="d139-divider"></div>
+      <div class="d139-already-signed">
+        <div class="d139-already-signed-text">
+          <strong>Already Signed?</strong>
+          Signed your agreement in another window or tab? Skip ahead to payment.
+        </div>
+        <a href="{{CHECKOUT_URL}}" class="d139-already-signed-link">Go to Checkout &nbsp;↗</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="d139-footer">
+    <a href="https://www.define139.com">← Return to Define139.com</a>
+  </div>
+
+</div>

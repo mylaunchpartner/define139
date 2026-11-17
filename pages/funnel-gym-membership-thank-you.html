@@ -1,0 +1,320 @@
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #e0bf44;
+    --black: #0a0a0a;
+    --dark: #0d0d0d;
+    --card-bg: #141414;
+    --white: #ffffff;
+    --muted: rgba(255,255,255,0.6);
+    --border: #222;
+  }
+
+  body, .d139-funnel-wrap * {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .d139-funnel-wrap {
+    background: var(--dark);
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow-x: hidden;
+  }
+
+  .d139-banner {
+    background: var(--gold);
+    color: var(--black);
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .d139-header {
+    background: #0a0a0a;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 24px 40px;
+    text-align: center;
+  }
+  .d139-header img { height: 80px; width: auto; }
+
+  /* Progress — all complete */
+  .d139-progress {
+    background: #111;
+    border-bottom: 1px solid var(--border);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .d139-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+  }
+  .d139-step.complete { color: var(--gold); }
+  .d139-step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  .d139-step.complete .d139-step-num {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--black);
+  }
+  .d139-step-connector {
+    width: 56px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.4;
+    margin: 0 14px;
+  }
+
+  /* Main */
+  .d139-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 72px 24px;
+  }
+
+  .d139-ty-card {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Checkmark */
+  .d139-check {
+    width: 80px;
+    height: 80px;
+    background: rgba(224,191,68,0.1);
+    border: 2px solid rgba(224,191,68,0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 32px;
+    font-size: 2.2rem;
+    color: var(--gold);
+  }
+
+  .d139-eyebrow {
+    font-size: 0.9rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .d139-ty-card h1 {
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    margin-bottom: 24px;
+  }
+  .d139-ty-card h1 .gold { color: var(--gold); }
+
+  .d139-ty-card .sub {
+    font-size: 1.2rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 500px;
+    margin: 0 auto 40px;
+  }
+
+  /* What's next box */
+  .d139-next-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 40px;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  .d139-next-box .box-title {
+    font-size: 0.88rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 22px;
+  }
+  .d139-next-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 18px;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.65;
+  }
+  .d139-next-item:last-child { margin-bottom: 0; }
+  .d139-next-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    margin-top: 8px;
+  }
+  .d139-app-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+  .d139-app-links a { display: inline-flex; align-items: center; gap: 7px; background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 9px 16px; color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em; }
+
+  /* CTA button */
+  .d139-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 20px 48px;
+    border-radius: 100px;
+    transition: opacity 0.2s;
+    margin-bottom: 24px;
+  }
+  .d139-btn:hover { opacity: 0.87; }
+
+  .d139-ty-note {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.7;
+  }
+  .d139-ty-note a { color: var(--gold); text-decoration: none; }
+
+  .d139-footer {
+    background: var(--black);
+    border-top: 1px solid #1a1a1a;
+    text-align: center;
+    padding: 32px 20px;
+  }
+  .d139-footer a {
+    color: rgba(255,255,255,0.45);
+    font-size: 0.95rem;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+  .d139-footer a:hover { color: var(--gold); }
+
+  .d139-session-cta { background: rgba(224,191,68,0.06); border: 1.5px solid rgba(224,191,68,0.3); border-radius: 16px; padding: 32px 36px; text-align: center; margin-bottom: 40px; }
+  .d139-session-label { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .d139-session-text { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.75; max-width: 460px; margin: 0 auto 24px; }
+  .d139-session-btn { display: inline-block; background: var(--gold); color: var(--black); text-decoration: none; font-size: 0.95rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 16px 36px; border-radius: 100px; transition: opacity 0.2s; }
+  .d139-session-btn:hover { opacity: 0.87; }
+
+  @media (max-width: 600px) {
+    .d139-header img { height: 64px; }
+    .d139-next-box { padding: 24px 20px; }
+    .d139-step-connector { width: 28px; margin: 0 8px; }
+    .d139-step { font-size: 0.78rem; }
+  }
+</style>
+
+<div class="d139-funnel-wrap">
+
+  <!-- Banner -->
+  <div class="d139-banner">DEFINE139@GMAIL.COM &nbsp;&nbsp;/&nbsp;&nbsp; (304) 320 – 7869</div>
+
+  <!-- Header -->
+  <div class="d139-header">
+    <a href="https://www.define139.com">
+      <img src="https://cdn.prod.website-files.com/68f6a737852999ffa54cea22/6a0d226a5f5912db92fddc88_Final%20Logo.png" alt="Define139">
+    </a>
+  </div>
+
+  <!-- Progress — all complete -->
+  <div class="d139-progress">
+    <div class="d139-step complete">
+      <div class="d139-step-num">✓</div>
+      <span>Agreement</span>
+    </div>
+    <div class="d139-step-connector"></div>
+    <div class="d139-step complete">
+      <div class="d139-step-num">✓</div>
+      <span>Payment</span>
+    </div>
+    <div class="d139-step-connector"></div>
+    <div class="d139-step complete">
+      <div class="d139-step-num">✓</div>
+      <span>Confirm</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="d139-main">
+    <div class="d139-ty-card">
+
+      <div class="d139-check">✓</div>
+
+      <p class="d139-eyebrow">You’re In!</p>
+      <h1>Welcome to <span class="gold">Define139</span></h1>
+      <p class="sub">Your membership is confirmed and your payment has been processed. You’ll receive a personalized welcome email shortly with everything you need to get started.</p>
+
+      <div class="d139-next-box">
+        <p class="box-title">What Happens Next</p>
+        <div class="d139-next-item">
+          <div class="d139-next-dot"></div>
+          <span>Check your inbox — a personalized welcome email is on its way with your next steps and account setup instructions</span>
+        </div>
+        <div class="d139-next-item">
+          <div class="d139-next-dot"></div>
+          <span>Your gym access code information will be included in your welcome email</span>
+        </div>
+        <div class="d139-next-item">
+          <div class="d139-next-dot"></div>
+          <span>Questions? Reach out to us anytime at <a href="mailto:define139@gmail.com" style="color:var(--gold);text-decoration:none;">define139@gmail.com</a></span>
+        </div>
+      </div>
+
+      <div class="d139-session-cta">
+        <p class="d139-session-label">Your Next Step</p>
+        <p class="d139-session-text">Every new member gets a complimentary “Get Started” training session — a personalized walkthrough of the app, the equipment, and your first week’s plan. No cost, no obligation.</p>
+        <a href="https://complimentarysession.define139.com/complimentary-training-session-page" class="d139-session-btn">Book Your Complimentary Session &nbsp;↗</a>
+      </div>
+
+      <a href="https://www.define139.com" class="d139-btn">Return to Define139.com &nbsp;→</a>
+
+      <p class="d139-ty-note">
+        Membership: Gym Membership &nbsp;·&nbsp; $19/week &nbsp;·&nbsp; 3-Month Commitment
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="d139-footer">
+    <a href="https://www.define139.com">← Return to Define139.com</a>
+  </div>
+
+</div>
