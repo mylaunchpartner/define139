@@ -78,7 +78,25 @@
     });
   }
 
+  // Checkout + contract funnels: all funnels are clones of one template, so their
+  // embeds may still say data-page="funnel-gym-membership-…". The step URL
+  // decides which funnel page loads: /contract-<slug>, /check-your-email-<slug>,
+  // /checkout-<slug>, /thank-you-<slug> → pages/funnel-<slug>-<step>.html.
+  // Falls back to the embed's own data-page if that file doesn't exist.
+  var fallback = null;
+  if (/^funnel-/.test(page)) {
+    var m = location.pathname.replace(/\/+$/, '').match(/^\/(contract|check-your-email|checkout|thank-you)-([a-z0-9-]+)$/);
+    if (m) {
+      var routed = 'funnel-' + m[2] + '-' + (m[1] === 'check-your-email' ? 'holding' : m[1]);
+      if (routed !== page) { fallback = page; page = routed; }
+    }
+  }
+
   get('pages/' + page + '.html')
+    .catch(function (err) {
+      if (!fallback) throw err;
+      return get('pages/' + fallback + '.html');
+    })
     .then(function (html) {
       var parts = [];
       if (html.indexOf('<!--d139:header-->') > -1) parts.push(get('partials/header.html').then(function (h) { html = html.replace('<!--d139:header-->', h); }));
