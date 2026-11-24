@@ -14,6 +14,7 @@ TPL = ROOT / "tools" / "funnel-templates"
 OUT = ROOT / "pages"
 JOIN = "https://join.define139.com"
 TERM = "3-Month Commitment"
+SHELL = (TPL / "_shell.css").read_text()
 
 PRODUCTS = [
     # slug, chip name, price, kind
@@ -110,7 +111,8 @@ def main():
             CHECKOUT_URL=f"{JOIN}/checkout-{slug}",
         )
         for page, tpl in PAGES.items():
-            html = render((TPL / tpl).read_text(), values)
+            src = (TPL / tpl).read_text().replace("</style>", SHELL + "</style>", 1)
+            html = render(src, values)
             (OUT / f"funnel-{slug}-{page}.html").write_text(html)
     print(f"wrote {len(PRODUCTS) * len(PAGES)} files")
 
